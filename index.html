@@ -1,148 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>University Website</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <body>
-    <section class="header">
-      <nav>
-        <a href="index.html"><img src="./images/logo.png" alt="" /></a>
-        <div class="nav-links" id="navLinks">
-          <i class="fa-solid fa fa-xmark" onclick="hideMenu()"></i>
-          <ul>
-            <li><a href="./index.html">HOME</a></li>
-            <li><a href="./about.html">ABOUT</a></li>
-            <li><a href="./course.html">COURSE</a></li>
-            <li><a href="./blog.html">BLOG</a></li>
-            <li><a href="./contact.html">CONTACT</a></li>
-          </ul>
-        </div>
-        <i class="fa-solid fa fa-bars" onclick="showMenu()"></i>
-      </nav>
-      <div class="text-box">
-        <h1>Learn Vibes</h1>
-        <p>
-          "Welcome to our website. <br> This platform is designed for educational purposes and provides quizzes, quotes, blogs, and more." 
-        </p>
-        <a href="" class="hero-btn">Visit Us to Know More</a>
-      </div>
+<html>
+<head>
+  <title>Blog Website</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>My Blog</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Latest Blog Posts</h2>
+      <article>
+        <h3>Blog Post Title</h3>
+        <p>Blog post content goes here...</p>
+        <a href="#">Read More</a>
+      </article>
+      <article>
+        <h3>Another Blog Post Title</h3>
+        <p>Blog post content goes here...</p>
+        <a href="#">Read More</a>
+      </article>
     </section>
 
-    <!-- course -->
+    <aside>
+      <h2>Categories</h2>
+      <ul>
+        <li><a href="#">Category 1</a></li>
+        <li><a href="#">Category 2</a></li>
+        <li><a href="#">Category 3</a></li>
+      </ul>
+    </aside>
+  </main>
 
-    <section class="course">
-      <h1>Courses We Offer</h1>
-      <p>Following are some</p>
-      <div class="row">
-        <div class="course-col">
-          <h3>Quizzes</h3>
-          Engage in interactive assessments across various subjects and topics. 
-          Our quizzes are designed to challenge and enhance your knowledge, 
-          providing an enjoyable learning experience while reinforcing key concepts.
-          </p>
-        </div>
-        <div class="course-col">
-          <h3>Quotes</h3>
-          <p>Explore a rich collection of insightful and motivational quotes.
-            These carefully curated quotes aim to inspire, encourage reflection, 
-            and offer wisdom from notable individuals across different domains.
-          </p>
-        </div>
-        <div class="course-col">
-          <h3>PDFs</h3>
-          <p>Access a library of informative PDF documents covering a wide range of subjects. 
-            These materials are carefully selected to provide valuable information and resources for educational purposes.
-          </p>
-        </div>
-      </div>
-    </section>
-<!-- campus -->
-    <section class="campus">
-      <h1>Our Global Campus</h1>
-      <p>If the customer is very smart, he or she will be able to achieve the desired result</p>
-      <div class="row">
-        <div class="campus-col">
-          <img src="./images/london.png" alt="">
-          <div class="layer">
-            <h3>LONDON</h3>
-          </div>
-        </div>
-        <div class="campus-col">
-          <img src="./images/newyork.png" alt="">
-          <div class="layer">
-            <h3>India</h3></h3>
-          </div>
-        </div>
-        <div class="campus-col">
-          <img src="./images/washington.png" alt="">
-          <div class="layer">
-            
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- testimonials -->
-
-    <section class="testimonials">
-      <h1>What Our Student Says</h1>
-    
-     <div class="row">
-        <div class="testimonial-col">
-          <img src="./images/user1.jpg" alt="">
-          <div>Thank you very much. Any guilt of the life which one pleases by the right of the body shall be rejected here?</p>
-          <h3>Zaur Barkley</h3>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-        <div class="testimonial-col">
-          <img src="./images/user2.jpg" alt="">
-          <div>"An invaluable platform for the curious mind! This website offers an extensive range of educational resources, from engaging quizzes to inspirational quotes, enriching Islamic content, and a vast collection of informative PDFs. A go-to destination for continuous learning and personal growth!"</p>
-          <h3>Faizan Ahmad</h3>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!----- Call to action ------>
-
-    <section class="cta">
-      <h1>Enroll For Our Various Online Courses</h1>
-      <a href="" class="hero-btn">CONTACT US</a>
-    </section>
-
-    <!--------- footer --------->
-
-    <section class="footer">
-      <h4>About Us</h4>
-      <p>"Empowering learning journeys worldwide. Explore, learn, grow."</p>
-      <div class="icons">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-linkedin"></i>
-      </div>
-      <p>Made Width <i class="fa-solid fa-heart"></i> by Me Waheed</p>
-    </section>
-
-    <script src="script.js"></script>
-  </body>
+  <footer>
+    <p>&copy; 2022 My Blog. All rights reserved.</p>
+  </footer>
+</body>
 </html>

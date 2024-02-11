@@ -1,41 +1,22 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LearnVibes</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Quiz Game</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to LearnVibes</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <h2>Latest Blog Posts</h2>
-      
-      <article>
-        <h3>Another Blog Post Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquam tincidunt, urna nunc tincidunt nunc, id lacinia nunc nunc id nunc.</p>
-        <a href="#">Read More</a>
-      </article>
-    </section>
-
-    
-  </main>
-
-  <footer>
-    <p>&copy; 2024 LearnVibes. All rights reserved.</p>
-  </footer>
+  <div id="quiz-container">
+    <h1>Quiz Game</h1>
+    <div id="question-container">
+      <p id="question"></p>
+      <ul id="options"></ul>
+    </div>
+    <div id="timer-container">
+      <p id="timer"></p>
+    </div>
+    <button id="next-btn">Next</button>
+  </div>
 
   <script src="script.js"></script>
 </body>

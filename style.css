@@ -1,1 +1,47 @@
 
+
+CSS (style.css):
+```css
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#quiz-container {
+  margin: 50px auto;
+  width: 400px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#question-container {
+  margin-bottom: 20px;
+}
+
+#options {
+  list-style-type: none;
+  padding: 0;
+}
+
+#options li {
+  margin-bottom: 10px;
+}
+
+#timer-container {
+  margin-bottom: 20px;
+}
+
+#next-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#next-btn:hover {
+  background-color: #45a049;
+}
+```

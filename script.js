@@ -1,3 +1,4 @@
+JavaScript (script.js):
 ```javascript
 const quizData = [
   {
@@ -98,7 +99,7 @@ function showNextQuestion() {
     startTimer();
     nextButton.style.display = "none";
   } else {
-endQuiz();
+    endQuiz();
   }
 }
 

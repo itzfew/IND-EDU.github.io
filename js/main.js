@@ -26,10 +26,6 @@ function getElementById(elementId) {
 }
 
 
-function getOrderButtonElements() {
-    return document.querySelectorAll('button.order-button');
-}
-const header = getElementById('main-header');
 
 function toggleMobileNav() {
     if(header.classList.contains('focus-nav')){

@@ -1,84 +1,5 @@
 let isMobileNav = false;
 
-
-function initPage() {
-    setUpWebShopPrices();
-    setUpButtonListeners();
-    registerNavigationEvents();
-}
-
-function setUpWebShopPrices() {
-    const webShopPriceElementList = getWebShopPricesElement();
-    webShopPriceElementList.forEach((value) => {
-        value.innerHTML = '$ ' + getRandomPriceBetween(13, 25);
-    })
-}
-
-function getRandomPriceBetween(minPrice, maxPrice) {
-    const dollar = getRndInteger(minPrice, maxPrice);
-    let penny = getRndInteger(0, 99);
-
-    if (penny < 9)
-        penny = `0${penny}`;
-
-    return `${dollar}.${penny}`;
-}
-
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
-function getWebShopPricesElement() {
-    return document.querySelectorAll('.price-tag .amount');
-}
-
-
-function getWebShopItemElements() {
-    return document.querySelectorAll('.shop-item');
-}
-
-function displaySelectedItemView() {
-    getSelectedItemView().classList.remove('hidden');
-}
-
-function getSelectedItemView() {
-    return document.getElementById('selected-shop-item');
-}
-
-function setupSelectedItemView(value) {
-    getElementById('selected-item-name').innerHTML = value.dataset.name;
-    getElementById('selected-item-img').src = value.dataset.img;
-    getElementById('selected-item-description').innerHTML = value.dataset.description;
-}
-
-function displayShopItemDetails(value) {
-
-    displaySelectedItemView();
-    setupSelectedItemView(value);
-}
-
-function setupWebshopClickListener() {
-    const webshopItems = getWebShopItemElements();
-    webshopItems.forEach(value => {
-        value.addEventListener('click', (e) => {
-            e.stopPropagation();
-            displayShopItemDetails(value)
-        })
-    });
-
-    //stop propagation input
-    document.querySelector('.shop .selected-shop-item .content').addEventListener('click', (e) => {
-        e.stopPropagation();
-    })
-}
-
-
-function setUpButtonListeners() {
-    setupCloseButtonListener();
-    setupWebshopClickListener();
-    setupOrderButtonListener();
-}
-
 function setupCloseButtonListener() {
     const closeButtonSelectors = getCloseButtonElements();
     closeButtonSelectors.forEach(value => {
@@ -104,16 +25,6 @@ function getElementById(elementId) {
     return document.getElementById(elementId);
 }
 
-function setupOrderButtonListener() {
-    const orderButtonElementList = getOrderButtonElements()
-    orderButtonElementList.forEach( button =>  {
-        button.addEventListener('click', (e) => {
-            e.stopPropagation();
-            location.href = "#order-form";
-
-        })
-    })
-}
 
 function getOrderButtonElements() {
     return document.querySelectorAll('button.order-button');

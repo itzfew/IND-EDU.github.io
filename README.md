@@ -5,11 +5,11 @@ Welcome to IND-EDU, your go-to platform for study materials and resources for va
 
 ## Credit
 
-This website was created by [user](github.com/waheedchala786).
+This website was created by [user](https://github.com/Waheedcalla786).
 
 ## Follow Us
 
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/username)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/Waheedcalla786)
 [![Instagram](https://img.shields.io/badge/Instagram-Profile-pink?logo=instagram)](https://www.instagram.com/waheedchalla)
 [![Twitter](https://img.shields.io/badge/Twitter-Profile-blue?logo=twitter)](https://twitter.com/waheedchalla)
 [![Facebook](https://img.shields.io/badge/Facebook-Profile-blue?logo=facebook)](https://www.facebook.com/profile.php?id=100082013496506)

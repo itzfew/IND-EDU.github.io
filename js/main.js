@@ -209,4 +209,3 @@ function showInstallButton() {
     menu.classList.toggle("show-menu");
 }
 
-

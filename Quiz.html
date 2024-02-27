@@ -329,7 +329,16 @@ function submitAnswer() {
   }
 }
 
-
+skipButton.addEventListener('click', () => {
+  currentQuestion++;
+  if (currentQuestion >= quizData.length) {
+    showResult();
+  } else {
+    showQuestion();
+  }
+  togglePreviousButtonVisibility(); // Add this line to update the visibility of the previous button
+});
+    
 const previousButton = document.getElementById('previous');
 
 function togglePreviousButtonVisibility() {

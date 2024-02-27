@@ -1,4 +1,4 @@
-let isMobileNav = false;
+let isMobileNav = true;
 
 function setupCloseButtonListener() {
     const closeButtonSelectors = getCloseButtonElements();

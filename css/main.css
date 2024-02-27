@@ -410,3 +410,22 @@ footer {
     padding: 0 20px;
     margin-top: auto; /* Pushes the copyright to the bottom */
 }
+
+
+#installButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#installButton.show {
+  display: block;
+}
+    

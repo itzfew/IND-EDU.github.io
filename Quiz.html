@@ -122,16 +122,13 @@
     <div id="timer"></div>
   </div>
   
-<div id="quiz-container">
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name">
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email">
-  </div>
-  <!-- Rest of your quiz content -->
+<form id="user-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name"><br><br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br><br>
+  <button id="start-button">Start Quiz</button>
+</form>
   
   <script>
     const quizData = [
@@ -336,7 +333,6 @@ function submitAnswer() {
   }
 }
 
-    
 // Define variables to store name and email
 let userName = "";
 let userEmail = "";
@@ -360,9 +356,38 @@ function startQuiz() {
 // Call startQuiz() function when a start button is clicked
 const startButton = document.getElementById('start-button');
 startButton.addEventListener('click', startQuiz);
-    
-
 </div>
+
+    function startQuiz() {
+  userName = document.getElementById('name').value.trim();
+  userEmail = document.getElementById('email').value.trim();
+
+  if (userName === "" || userEmail === "") {
+    alert("Please enter your name and email to start the quiz.");
+    return;
+  }
+
+  // Send user details to the backend
+  fetch('/api/save-user-details', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ name: userName, email: userEmail }),
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Handle response from the backend
+    console.log(data);
+    // Proceed with the quiz if necessary
+    showQuestion();
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    // Handle errors if necessary
+  });
+}
+
     
   </script>
 </body>

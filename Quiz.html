@@ -5,56 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Game</title>
   
- <!-- Include Firebase SDK -->
+
+</head>
+<body>
+  
+   <p>Please enter your name and email to start the quiz.</p>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+  </div>
+  <button id="start-button">Start Quiz</button>
+
+  <!-- Include Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js"></script>
 
-  <script>
-    // Your Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyA_dNTrWIo8fSTub-J4uh_Yjf4Fr_qay3c",
-    authDomain: "ind-edu.firebaseapp.com",
-    projectId: "ind-edu",
-    storageBucket: "ind-edu.appspot.com",
-    messagingSenderId: "60520122150",
-    appId: "1:60520122150:web:0205f57353dae6cfc723e7"
-  };
+  <!-- Include your Firebase configuration and script -->
+  <script src="firebase-config.js"></script>
 
-// Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+  <!-- Include your main script -->
+  <script src="main.js"></script>
 
-    // Access Firestore
-    const db = firebase.firestore();
-
-    // Function to add data to Firestore
-    function addDataToFirestore() {
-      // Specify the collection name
-      const collectionRef = db.collection("users");
-
-      // Data to be added
-      const userData = {
-        name: "John Doe",
-        email: "john@example.com"
-      };
-
-      // Add data to Firestore
-      collectionRef.add(userData)
-        .then((docRef) => {
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-          console.error("Error adding document: ", error);
-        });
-    }
-    
-  </script>
-</head>
-<body>
-  <!-- Button to trigger adding data -->
-  <button onclick="addDataToFirestore()">Add Data to Firestore</button>
-</script>
-  
-  .
   
   <style>
     body {
@@ -385,41 +360,7 @@ function submitAnswer() {
   }
 }
     
-// Define variables to store name and email
-let userName = "";
-let userEmail = "";
 
-// Function to start the quiz after getting user details
-function startQuiz() {
-  // Get user details from input fields
-  userName = document.getElementById('name').value.trim();
-  userEmail = document.getElementById('email').value.trim();
-
-  // Check if name and email are provided
-  if (userName === "" || userEmail === "") {
-    alert("Please enter your name and email to start the quiz.");
-    return;
-  }
-
-  // Add user details to Firestore
-  db.collection("users").add({
-    name: userName,
-    email: userEmail
-  })
-  .then((docRef) => {
-    console.log("User details written with ID: ", docRef.id);
-    // Proceed with the quiz
-    showQuestion();
-  })
-  .catch((error) => {
-    console.error("Error adding user details: ", error);
-    // Handle errors if necessary
-  });
-}
-
-// Call startQuiz() function when a start button is clicked
-const startButton = document.getElementById('start-button');
-startButton.addEventListener('click', startQuiz);
 
     
   </script>

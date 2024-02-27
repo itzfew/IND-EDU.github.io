@@ -121,7 +121,18 @@
     <button id="play-again" style="display: none;">Play Again</button>
     <div id="timer"></div>
   </div>
-
+  
+<div id="quiz-container">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email">
+  </div>
+  <!-- Rest of your quiz content -->
+  
   <script>
     const quizData = [
       {
@@ -325,7 +336,33 @@ function submitAnswer() {
   }
 }
 
+    
+// Define variables to store name and email
+let userName = "";
+let userEmail = "";
 
+// Function to start the quiz after getting user details
+function startQuiz() {
+  // Get user details from input fields
+  userName = document.getElementById('name').value.trim();
+  userEmail = document.getElementById('email').value.trim();
+
+  // Check if name and email are provided
+  if (userName === "" || userEmail === "") {
+    alert("Please enter your name and email to start the quiz.");
+    return;
+  }
+
+  // Proceed with the quiz
+  showQuestion();
+}
+
+// Call startQuiz() function when a start button is clicked
+const startButton = document.getElementById('start-button');
+startButton.addEventListener('click', startQuiz);
+    
+
+</div>
     
   </script>
 </body>

@@ -172,27 +172,33 @@ initPage();
 
 let deferredPrompt;
 
+// Listen for the beforeinstallprompt event
 window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the default behavior of the event
   e.preventDefault();
+  // Store the event for later use
   deferredPrompt = e;
+  // Show the install button or prompt
   showInstallButton();
 });
 
+// Function to show the install button or prompt
 function showInstallButton() {
+  // Select the install button element from your HTML
   const installButton = document.getElementById('installButton');
-  installButton.classList.add('show');
+  // Display the install button
+  installButton.style.display = 'block';
 
+  // Add an event listener to the install button
   installButton.addEventListener('click', (e) => {
-    installButton.classList.remove('show');
+    // Hide the install button
+    installButton.style.display = 'none';
+    // Show the installation prompt
     deferredPrompt.prompt();
+    // Wait for the user's choice
     deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the install prompt');
-      } else {
-        console.log('User dismissed the install prompt');
-      }
+      // Reset the deferredPrompt variable
       deferredPrompt = null;
     });
   });
 }
-

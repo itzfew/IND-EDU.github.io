@@ -68,8 +68,7 @@
     <div id="result"></div>
     <div id="navigation">
       <button id="skip" class="btn">Skip</button>
-      <button id="previous" class="btn">Previous</button>
-      <button id="next" class="btn">Next</button>
+      <button id="submit" class="btn">Submit</button>
     </div>
     <button id="play-again" style="display: none;">Play Again</button>
     <div id="timer"></div>
@@ -103,6 +102,7 @@
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
     const resultElement = document.getElementById('result');
+    const submitButton = document.getElementById('submit');
     const playAgainButton = document.getElementById('play-again');
     const timerElement = document.getElementById('timer');
 
@@ -118,6 +118,8 @@
         optionButton.onclick = () => submitAnswer(option);
         optionsElement.appendChild(optionButton);
       });
+      submitButton.style.display = 'block';
+      submitted = false;
       startTimer();
     }
 
@@ -131,16 +133,17 @@
           resultElement.textContent = 'Correct!';
           resultElement.style.color = '#2ecc71';
         } else {
-          resultElement.textContent = `Wrong! The correct answer is: ${q.answer}`;
+          resultElement.textContent = `Wrong!`;
           resultElement.style.color = '#e74c3c';
         }
-        currentQuestion++;
-        if (currentQuestion < quizData.length) {
-          setTimeout(showQuestion, 1000);
-        } else {
-          showResult();
-        }
+        showNextButton();
       }
+    }
+
+    function showNextButton() {
+      const nextButton = document.getElementById('skip');
+      nextButton.style.display = 'block';
+      submitButton.style.display = 'none';
     }
 
     function showResult() {
@@ -159,7 +162,8 @@
     function startTimer() {
       timer = setInterval(() => {
         if (timeLeft <= 10) {
-          timerElement.style.color = '#e74c3c'; // Change timer color to red when 10 seconds left
+          timerElement.style.color = '#e74c3c'; // Change timer color to red when 10
+timerElement.style.color = '#e74c3c'; // Change timer color to red when 10 seconds left
         }
         if (timeLeft <= 0) {
           clearInterval(timer);
@@ -175,7 +179,6 @@
       clearInterval(timer);
       timeLeft = 45;
       timerElement.style.color = '#333'; // Reset timer color
-      submitted = false;
     }
 
     playAgainButton.addEventListener('click', () => {
@@ -190,8 +193,6 @@
     });
 
     const skipButton = document.getElementById('skip');
-    const previousButton = document.getElementById('previous');
-    const nextButton = document.getElementById('next');
 
     skipButton.addEventListener('click', () => {
       currentQuestion++;
@@ -202,24 +203,13 @@
       }
     });
 
-    previousButton.addEventListener('click', () => {
-      if (currentQuestion > 0) {
-        currentQuestion--;
-        showQuestion();
-      }
-    });
-
-    nextButton.addEventListener('click', () => {
-      currentQuestion++;
-      if (currentQuestion >= quizData.length) {
-        showResult();
-      } else {
-        showQuestion();
-      }
+    const submitButton = document.getElementById('submit');
+    submitButton.addEventListener('click', () => {
+      submitAnswer(null); // Submit with null option when submit button is clicked
     });
 
     showQuestion();
   </script>
 </body>
 </html>
-``
+        

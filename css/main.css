@@ -44,6 +44,9 @@ h4 {
 h5 {
     color: #000000; 
 }
+h6 {
+    color: #000000; 
+}
 
 a {
     color: var(--primary-color);

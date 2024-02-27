@@ -316,3 +316,45 @@
 .top-menu ul li a:hover {
   background-color: #555;
 }
+
+
+
+
+.timer {
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  font-size: 3em;
+  padding: 0 5px;
+}
+
+.colon {
+  font-size: 3em;
+  opacity: 0.5;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #0056b3;
+}
+

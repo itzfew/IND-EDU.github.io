@@ -74,41 +74,6 @@
 @media only screen and (max-width: 760px) {
 
 
-    .focus-nav {
-        background-color: #0d0a12 !important;
-    }
-
-    .focus-nav .mobile-nav .toggle-nav{
-        transform: rotate(90deg);
-    }
-
-    .focus-nav nav {
-        margin-top: 0;
-        height: 100vh;
-    }
-
-    .mobile-nav {
-        display: block;
-        background-color: rgba(0,0,0,0.5);
-    }
-
-    .mobile-nav img{
-        width: 45%;
-        margin: 10px 22.5%;
-    }
-
-    .mobile-nav .toggle-nav {
-        transition: all 0.2s;
-        position: absolute;
-        transform: rotate(-90deg);
-        top: 15px;
-        font-size: 4em;
-        right: 56px;
-        margin: 0;
-        cursor: pointer;
-    }
-
-
     header {
         position: fixed;
     }

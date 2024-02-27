@@ -209,8 +209,8 @@
     }
 
     playAgainButton.addEventListener('click', () => {
-      currentQuestion = 0;
-      score =0;
+      currentQuestion =0;
+      score = 0; // Reset score
       questionElement.style.display = 'block';
       optionsElement.style.display = 'grid';
       resultElement.textContent = '';
@@ -236,23 +236,5 @@
 
     showQuestion();
   </script>
-  
-<button id="play-again" style="display: none;">Play Again</button>
-<div id="result"></div>
-<script>
-  function showResult() {
-    questionElement.style.display = 'none';
-    optionsElement.style.display = 'none';
-    resultElement.textContent = `You scored ${score} out of ${quizData.length}`;
-    resultElement.style.color = '#333';
-    if (score === quizData.length) {
-      resultElement.textContent += ". Congratulations! You got all the answers right!";
-    } else if (score >= Math.floor(quizData.length * 0.7)) {
-      resultElement.textContent += ". Keep it up!";
-    }
-    playAgainButton.style.display = 'block';
-  }
-</script>
-  
 </body>
 </html>

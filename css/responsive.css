@@ -241,32 +241,4 @@
 
 
     
-/* Style for the h5 element */
-h5.margin-2 {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-/* Style for the unordered list */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-/* Style for list items */
-ul li {
-    padding-left: 20px;
-    position: relative;
-    margin-bottom: 5px;
-}
-
-/* Add tick icon before list items */
-ul li::before {
-    content: "\2713"; /* Unicode character for a checkmark */
-    font-size: 16px;
-    color: #00cc00; /* Green color for the tick */
-    position: absolute;
-    left: 0;
-    top: 0;
-}
 

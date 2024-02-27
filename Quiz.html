@@ -224,16 +224,19 @@
     }
 
     function showResult() {
-      questionElement.style.display = 'none';
-      optionsElement.style.display = 'none';
-      resultElement.textContent = `You scored ${score} out of ${quizData.length}`;
-      resultElement.style.color = '#333';
-      playAgainButton.style.display = 'block';
-      if (score === quizData.length) {
-        resultElement.textContent += ". Congratulations! You got all the answers right!";
-      } else if (score >= Math.floor(quizData.length * 0.7)) {
-        resultElement.textContent += ". Keep it up!";
-      }
+  questionElement.style.display = 'none';
+  optionsElement.style.display = 'none';
+  resultElement.textContent = `You scored ${score} out of ${quizData.length}`;
+  resultElement.style.color = '#333';
+  if (score === quizData.length) {
+    resultElement.textContent += ". Congratulations! You got all the answers right!";
+  } else if (score >= Math.floor(quizData.length * 0.7)) {
+    resultElement.textContent += ". Keep it up!";
+  } else {
+    resultElement.textContent += ". Keep it up, hope next time you will get better!";
+  }
+  playAgainButton.style.display = 'block';
+}
     }
 
     function startTimer() {

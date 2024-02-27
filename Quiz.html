@@ -54,6 +54,11 @@
     #play-again:hover {
       background-color: #27ae60;
     }
+    #timer {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
@@ -67,6 +72,7 @@
       <button id="next" class="btn">Next</button>
     </div>
     <button id="play-again" style="display: none;">Play Again</button>
+    <div id="timer"></div>
   </div>
 
   <script>
@@ -90,12 +96,17 @@
 
     let currentQuestion = 0;
     let score = 0;
+    let timer;
+    let timeLeft = 45; // Time for each question in seconds
+
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
     const resultElement = document.getElementById('result');
     const playAgainButton = document.getElementById('play-again');
+    const timerElement = document.getElementById('timer');
 
     function showQuestion() {
+      resetTimer();
       const q = quizData[currentQuestion];
       questionElement.textContent = q.question;
       optionsElement.innerHTML = '';
@@ -106,9 +117,11 @@
         optionButton.onclick = () => checkAnswer(option);
         optionsElement.appendChild(optionButton);
       });
+      startTimer();
     }
 
     function checkAnswer(option) {
+      clearInterval(timer);
       const q = quizData[currentQuestion];
       if (option === q.answer) {
         score++;
@@ -132,6 +145,32 @@
       resultElement.textContent = `You scored ${score} out of ${quizData.length}`;
       resultElement.style.color = '#333';
       playAgainButton.style.display = 'block';
+      if (score === quizData.length) {
+        resultElement.textContent += ". Congratulations! You got all the answers right!";
+      } else if (score >= Math.floor(quizData.length * 0.7)) {
+        resultElement.textContent += ". Keep it up!";
+      }
+    }
+
+    function startTimer() {
+      timer = setInterval(() => {
+        if (timeLeft <= 10) {
+          timerElement.style.color = '#e74c3c'; // Change timer color to red when 10 seconds left
+        }
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          checkAnswer(null); // Time's up, check answer with null option
+        } else {
+          timerElement.textContent = `Time left: ${timeLeft} seconds`;
+          timeLeft--;
+        }
+      }, 1000);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timeLeft = 45;
+      timerElement.style.color = '#333'; // Reset timer color
     }
 
     playAgainButton.addEventListener('click', () => {
@@ -141,6 +180,7 @@
       optionsElement.style.display = 'grid';
       resultElement.textContent = '';
       playAgainButton.style.display = 'none';
+      resetTimer();
       showQuestion();
     });
 

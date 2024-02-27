@@ -28,16 +28,18 @@ h1 {
     color: #FF0000; 
 }
 h2 {
-    color: #000;
+    color: #000000;
 }
 
 h3 {
-    color: #000; /
+    color: #000000; /
 }
 h4 {
-    color: #000; 
+    color: #000000; 
 }
-
+h4 {
+    color: #000000; 
+}
 
 a {
     color: var(--primary-color);

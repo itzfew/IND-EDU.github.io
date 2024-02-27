@@ -404,7 +404,9 @@ footer {
     text-decoration: underline;
 }
 
+/* Copyright styles */
 .copyright {
-    width: 100%; /* Ensure full width for copyright */
+    width: 100%;
     padding: 0 20px;
+    margin-top: auto; /* Pushes the copyright to the bottom */
 }

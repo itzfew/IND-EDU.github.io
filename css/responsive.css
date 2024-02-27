@@ -271,4 +271,45 @@
 }
 
     
+.post {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
 
+.post-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.post-image {
+    flex: 1;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+}
+
+.post-text {
+    flex: 3;
+    padding: 20px;
+}
+
+.post-link {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.post-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.post-link a:hover {
+    text-decoration: underline;
+}
+    
+
+    

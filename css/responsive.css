@@ -36,7 +36,7 @@
         top: 30px;
     }
 
-    header > ul > li.brand {
+    header > nav > ul > li.brand {
         max-width: 15%;
     }
 
@@ -74,6 +74,41 @@
 @media only screen and (max-width: 760px) {
 
 
+    .focus-nav {
+        background-color: #0d0a12 !important;
+    }
+
+    .focus-nav .mobile-nav .toggle-nav{
+        transform: rotate(90deg);
+    }
+
+    .focus-nav nav {
+        margin-top: 0;
+        height: 100vh;
+    }
+
+    .mobile-nav {
+        display: block;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .mobile-nav img{
+        width: 45%;
+        margin: 10px 22.5%;
+    }
+
+    .mobile-nav .toggle-nav {
+        transition: all 0.2s;
+        position: absolute;
+        transform: rotate(-90deg);
+        top: 15px;
+        font-size: 4em;
+        right: 56px;
+        margin: 0;
+        cursor: pointer;
+    }
+
+
     header {
         position: fixed;
     }
@@ -89,7 +124,7 @@
         flex-direction: column;
     }
 
-    header > ul > li.brand {
+    header > nav > ul > li.brand {
         display: none;
     }
 
@@ -141,6 +176,25 @@
         margin-bottom: 50px;
     }
 
+    #selected-shop-item .content {
+        max-width: 100vw;
+        max-height: 100vh;
+        height: 100vh;
+        margin: 0;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        justify-items: center;
+    }
+
+    #selected-shop-item .content figure {
+        max-width: 100vw;
+        margin: 0;
+    }
+
+    #selected-shop-item .content figure img {
+        width: 45%;
+        margin: 0 27.5%;
+    }
 
     #character-profile .character {
         margin: 0;
@@ -209,12 +263,28 @@
         width: 100%;
         margin-bottom: 50px;
     }
-    
+
+    #selected-shop-item .content {
+        max-width: 100vw;
+        max-height: 100vh;
+        height: 100vh;
+        margin: 0;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        justify-items: center;
+    }
+
+    #selected-shop-item .content figure {
+        max-width: 100vw;
+        margin: 0;
+    }
+
+    #selected-shop-item .content figure img {
+        width: 45%;
+        margin: 0 27.5%;
+    }
+
+    .order-form {
+        grid-template-columns: none;
+    }
 }
-
-
-
-
-​
-  
-  

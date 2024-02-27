@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Game</title>
   
-    <!-- Include Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js"></script>
-<script>
-  // Your Firebase configuration
+ <!-- Include Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js"></script>
+
+  <script>
+    // Your Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyA_dNTrWIo8fSTub-J4uh_Yjf4Fr_qay3c",
     authDomain: "ind-edu.firebaseapp.com",
@@ -19,44 +20,38 @@
     appId: "1:60520122150:web:0205f57353dae6cfc723e7"
   };
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-// Reference to Firestore database
+// Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Access Firestore
     const db = firebase.firestore();
 
-    // Function to start the quiz after getting user details
-    function startQuiz() {
-      // Get user details from input fields
-      const userName = document.getElementById('name').value.trim();
-      const userEmail = document.getElementById('email').value.trim();
+    // Function to add data to Firestore
+    function addDataToFirestore() {
+      // Specify the collection name
+      const collectionRef = db.collection("users");
 
-      // Check if name and email are provided
-      if (userName === "" || userEmail === "") {
-        alert("Please enter your name and email to start the quiz.");
-        return;
-      }
+      // Data to be added
+      const userData = {
+        name: "John Doe",
+        email: "john@example.com"
+      };
 
-      // Add user details to Firestore
-      db.collection("users").add({
-        name: userName,
-        email: userEmail
-      })
-      .then((docRef) => {
-        console.log("User details written with ID: ", docRef.id);
-        // Proceed with the quiz
-        // Call your function to start the quiz here
-      })
-      .catch((error) => {
-        console.error("Error adding user details: ", error);
-        // Handle errors if necessary
-      });
+      // Add data to Firestore
+      collectionRef.add(userData)
+        .then((docRef) => {
+          console.log("Document written with ID: ", docRef.id);
+        })
+        .catch((error) => {
+          console.error("Error adding document: ", error);
+        });
     }
-
-    // Call startQuiz() function when the start button is clicked
-    const startButton = document.getElementById('start-button');
-    startButton.addEventListener('click', startQuiz);
-  
-  
+    
+  </script>
+</head>
+<body>
+  <!-- Button to trigger adding data -->
+  <button onclick="addDataToFirestore()">Add Data to Firestore</button>
 </script>
   
   .
@@ -389,6 +384,7 @@ function submitAnswer() {
     showNextButton();
   }
 }
+    
 // Define variables to store name and email
 let userName = "";
 let userEmail = "";

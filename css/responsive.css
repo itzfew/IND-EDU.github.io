@@ -64,12 +64,7 @@
         font-size: 1.4em !important;
     }
 
-    #character-profile > .character > .character-bio
-    {
-        padding: 20px;
-    }
 
-}
 
 @media only screen and (max-width: 760px) {
 

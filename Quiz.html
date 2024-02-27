@@ -98,6 +98,7 @@
     let score = 0;
     let timer;
     let timeLeft = 45; // Time for each question in seconds
+    let submitted = false;
 
     const questionElement = document.getElementById('question');
     const optionsElement = document.getElementById('options');
@@ -114,28 +115,31 @@
         const optionButton = document.createElement('button');
         optionButton.textContent = option;
         optionButton.classList.add('option');
-        optionButton.onclick = () => checkAnswer(option);
+        optionButton.onclick = () => submitAnswer(option);
         optionsElement.appendChild(optionButton);
       });
       startTimer();
     }
 
-    function checkAnswer(option) {
-      clearInterval(timer);
-      const q = quizData[currentQuestion];
-      if (option === q.answer) {
-        score++;
-        resultElement.textContent = 'Correct!';
-        resultElement.style.color = '#2ecc71';
-      } else {
-        resultElement.textContent = `Wrong! The correct answer is: ${q.answer}`;
-        resultElement.style.color = '#e74c3c';
-      }
-      currentQuestion++;
-      if (currentQuestion < quizData.length) {
-        setTimeout(showQuestion, 1000);
-      } else {
-        showResult();
+    function submitAnswer(option) {
+      if (!submitted) {
+        clearInterval(timer);
+        submitted = true;
+        const q = quizData[currentQuestion];
+        if (option === q.answer) {
+          score++;
+          resultElement.textContent = 'Correct!';
+          resultElement.style.color = '#2ecc71';
+        } else {
+          resultElement.textContent = `Wrong! The correct answer is: ${q.answer}`;
+          resultElement.style.color = '#e74c3c';
+        }
+        currentQuestion++;
+        if (currentQuestion < quizData.length) {
+          setTimeout(showQuestion, 1000);
+        } else {
+          showResult();
+        }
       }
     }
 
@@ -159,7 +163,7 @@
         }
         if (timeLeft <= 0) {
           clearInterval(timer);
-          checkAnswer(null); // Time's up, check answer with null option
+          submitAnswer(null); // Time's up, submit with null option
         } else {
           timerElement.textContent = `Time left: ${timeLeft} seconds`;
           timeLeft--;
@@ -171,6 +175,7 @@
       clearInterval(timer);
       timeLeft = 45;
       timerElement.style.color = '#333'; // Reset timer color
+      submitted = false;
     }
 
     playAgainButton.addEventListener('click', () => {
@@ -217,3 +222,4 @@
   </script>
 </body>
 </html>
+``

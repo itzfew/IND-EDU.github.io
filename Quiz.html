@@ -162,8 +162,7 @@
     function startTimer() {
       timer = setInterval(() => {
         if (timeLeft <= 10) {
-          timerElement.style.color = '#e74c3c'; // Change timer color to red when 10
-timerElement.style.color = '#e74c3c'; // Change timer color to red when 10 seconds left
+          timerElement.style.color = '#e74c3c'; // Change timer color to red when 10 seconds left
         }
         if (timeLeft <= 0) {
           clearInterval(timer);
@@ -203,7 +202,6 @@ timerElement.style.color = '#e74c3c'; // Change timer color to red when 10 secon
       }
     });
 
-    const submitButton = document.getElementById('submit');
     submitButton.addEventListener('click', () => {
       submitAnswer(null); // Submit with null option when submit button is clicked
     });
@@ -212,4 +210,3 @@ timerElement.style.color = '#e74c3c'; // Change timer color to red when 10 secon
   </script>
 </body>
 </html>
-        

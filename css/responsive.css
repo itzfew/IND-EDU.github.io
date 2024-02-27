@@ -271,6 +271,7 @@
 }
 
     
+
 .post {
     border: 1px solid #ccc;
     margin-bottom: 20px;
@@ -309,3 +310,4 @@
 .post-link a:hover {
     text-decoration: underline;
 }
+    

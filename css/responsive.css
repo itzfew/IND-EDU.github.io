@@ -156,43 +156,55 @@
         box-sizing: border-box;
     }
 
-    #character-profile .character {
-        margin-bottom: 90px;
-    }
-
-    #character-profile .character figure {
-        height: auto;
-    }
-
-    #character-profile .character .character-bio {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-    }
-
-    #character-profile .character {
-        margin: 0;
-        flex-wrap: wrap;
-        overflow: hidden;
-        flex-basis: 1%;
-
-    }
-
-    #character-profile .character figure {
-        width: 100%;
-        height: auto;
-    }
-
-    #character-profile .character .character-bio {
-        position: static;
-        width: 100%;
-        border: none;
-        box-sizing: border-box;
-    }
-
-
+/* Style for the character profile section */
+#character-profile {
+    padding: 20px;
 }
+
+/* Style for the character profile heading */
+#character-profile h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style for the character article */
+.character {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+/* Style for the character figure */
+.character figure {
+    margin-right: 20px;
+}
+
+/* Style for the character image */
+.character figure img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the character bio section */
+.character-bio {
+    flex-grow: 1;
+}
+
+/* Style for the character bio heading */
+.character-bio h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style for the character bio paragraph */
+.character-bio p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+    
+
+    
 
 /* Style for the webshop section */
 #webshop {

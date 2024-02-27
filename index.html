@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
     <!-- main css -->
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/responsive.css" rel="stylesheet" type="text/css">
-
 </head>
 <body>
+<header id="main-header" class="container-fluid">
+    <div class="mobile-nav ">
+        <img src="img/logo.png" alt="rick and morty logo">
+        <p class="toggle-nav">&#10094;</p>
+    </div>
+    <nav>
+        <ul>
+            <li class="brand"><img src="img/logo.png" alt="rick and morty logo"></li>
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#seasons">Seasons</a></li>
+            <li><a href="#character-profile">Character Profile</a></li>
+            <li><a href="#webshop">webshop</a></li>
+        </ul>
+    </nav>
 
-    
+</header>
 <main>
-  
-   
+
+    <!-- slideshow -->
+    <section id="home" class="container-fluid slider">
+        <figure>
+            <img src="img/slider/slide_1.png" alt="first-slide">
+        </figure>
+        <article class="slide-caption center-left">
            <b> <center><h1>IND-EDU</h1>
             <p>IND-EDU is an Indian educational website for NEET, JEE, boards, and other exams, 
                 aimed at sharing informative and helpful content.</p></center>
 </b>
-
+</article>
+    </section>
     <!-- season info -->
     <section id="seasons" class="container">
         <h1 class="highlight">All seasons</h1>
@@ -153,6 +173,9 @@
                 <li>Helpful</li>
             </ul>
         </article>
+
+
+
 
         
    </section>

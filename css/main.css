@@ -360,7 +360,7 @@ header > nav .active > a::before {
 
 
 footer {
-    background-color: #333;
+    background-color: #666; /* Lighter shade of gray */
     color: #fff;
     padding: 20px 0;
     text-align: center;

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+    #quiz-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #question {
+      font-size: 24px;
+      color: #333;
+    }
+    .options {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+    .option {
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .option:hover {
+      background-color: #2980b9;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    #play-again {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2ecc71;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #play-again:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <div id="quiz-container">
+    <div id="question"></div>
+    <div class="options" id="options"></div>
+    <div id="result"></div>
+    <button id="play-again" style="display: none;">Play Again</button>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is the capital of France?",
+        options: ["Paris", "Rome", "Berlin", "Madrid"],
+        answer: "Paris"
+      },
+      {
+        question: "Which planet is known as the Red Planet?",
+        options: ["Jupiter", "Mars", "Venus", "Saturn"],
+        answer: "Mars"
+      },
+      {
+        question: "What is the tallest mammal?",
+        options: ["Giraffe", "Elephant", "Horse", "Lion"],
+        answer: "Giraffe"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    const questionElement = document.getElementById('question');
+    const optionsElement = document.getElementById('options');
+    const resultElement = document.getElementById('result');
+    const playAgainButton = document.getElementById('play-again');
+
+    function showQuestion() {
+      const q = quizData[currentQuestion];
+      questionElement.textContent = q.question;
+      optionsElement.innerHTML = '';
+      q.options.forEach(option => {
+        const optionButton = document.createElement('button');
+        optionButton.textContent = option;
+        optionButton.classList.add('option');
+        optionButton.onclick = () => checkAnswer(option);
+        optionsElement.appendChild(optionButton);
+      });
+    }
+
+    function checkAnswer(option) {
+      const q = quizData[currentQuestion];
+      if (option === q.answer) {
+        score++;
+        resultElement.textContent = 'Correct!';
+        resultElement.style.color = '#2ecc71';
+      } else {
+        resultElement.textContent = 'Wrong!';
+        resultElement.style.color = '#e74c3c';
+      }
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        setTimeout(showQuestion, 1000);
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      questionElement.style.display = 'none';
+      optionsElement.style.display = 'none';
+      resultElement.textContent = `You scored ${score} out of ${quizData.length}`;
+      playAgainButton.style.display = 'block';
+    }
+
+    playAgainButton.addEventListener('click', () => {
+      currentQuestion = 0;
+      score = 0;
+      questionElement.style.display = 'block';
+      optionsElement.style.display = 'grid';
+      resultElement.textContent = '';
+      playAgainButton.style.display = 'none';
+      showQuestion();
+    });
+
+    showQuestion();
+  </script>
+</body>
+</html>

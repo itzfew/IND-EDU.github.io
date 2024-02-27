@@ -62,6 +62,30 @@
       margin-top: 10px;
       color: #333;
     }
+
+
+.option {
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.option.selected {
+  background-color: #e67e22;
+}
+
+.option.correct {
+  background-color: #2ecc71 !important;
+}
+
+.option.wrong {
+  background-color: #e74c3c !important;
+}
+
+
+    
   </style>
 </head>
 <body>
@@ -235,6 +259,48 @@
     });
 
     showQuestion();
+
+    function selectOption(option) {
+  if (!submitted) {
+    const selectedOption = optionsElement.querySelector('.selected');
+    if (selectedOption) {
+      selectedOption.classList.remove('selected');
+    }
+    const optionButtons = Array.from(optionsElement.querySelectorAll('.option'));
+    const selectedButton = optionButtons.find(button => button.textContent === option);
+    selectedButton.classList.add('selected');
+  }
+}
+
+function submitAnswer() {
+  if (!submitted) {
+    clearInterval(timer);
+    submitted = true;
+    const q = quizData[currentQuestion];
+    const selectedOption = optionsElement.querySelector('.selected');
+    if (selectedOption) {
+      const selectedAnswer = selectedOption.textContent;
+      if (selectedAnswer === q.answer) {
+        score++;
+        resultElement.textContent = 'Correct!';
+        resultElement.style.color = '#2ecc71';
+      } else {
+        resultElement.textContent = `Wrong! Correct answer: ${q.answer}`;
+        resultElement.style.color = '#e74c3c';
+        selectedOption.classList.add('wrong');
+        const correctOption = optionsElement.querySelector(`.option:not(.wrong)[data-answer="${q.answer}"]`);
+        if (correctOption) {
+          correctOption.classList.add('correct');
+        }
+      }
+    } else {
+      resultElement.textContent = 'Please select an answer';
+      resultElement.style.color = '#e74c3c';
+    }
+    showNextButton();
+  }
+}
+    
   </script>
 </body>
 </html>

@@ -208,3 +208,21 @@ function showInstallButton() {
     var menu = document.getElementById("menu");
     menu.classList.toggle("show-menu");
 }
+
+
+// JavaScript for handling button clicks (optional)
+document.getElementById("home").addEventListener("click", function() {
+  // Handle click event for Home button
+  console.log("Home button clicked");
+});
+
+document.getElementById("quiz").addEventListener("click", function() {
+  // Handle click event for Quiz button
+  console.log("Quiz button clicked");
+});
+
+document.getElementById("telegram").addEventListener("click", function() {
+  // Handle click event for Telegram button
+  console.log("Telegram button clicked");
+});
+

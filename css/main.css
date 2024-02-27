@@ -413,19 +413,21 @@ footer {
 
 
 #installButton {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    display: none; /* Initially hide the button */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff; /* Blue color for the button */
+    color: #fff; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
 }
 
-#installButton.show {
-  display: block;
+#installButton:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
 }
     

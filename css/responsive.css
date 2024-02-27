@@ -238,7 +238,37 @@
 
 
 
+/* Style for the top menu */
+.top-menu {
+    background-color: #333; /* Set background color */
+    padding: 10px 0; /* Add padding */
+}
 
+/* Style for the unordered list */
+.top-menu ul {
+    list-style: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center-align the list items */
+}
+
+/* Style for list items */
+.top-menu ul li {
+    display: inline-block; /* Display list items horizontally */
+    margin-right: 20px; /* Add spacing between list items */
+}
+
+/* Style for anchor links */
+.top-menu ul li a {
+    color: #fff; /* Set text color to white */
+    text-decoration: none; /* Remove underlines from links */
+    padding: 10px 20px; /* Add padding to links */
+}
+
+/* Hover effect for anchor links */
+.top-menu ul li a:hover {
+    background-color: #555; /* Darker background color on hover */
+}
 
     
 

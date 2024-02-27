@@ -105,10 +105,7 @@
   border-color: #2980b9;
 }
 
-#previous {
-  margin-top: 20px; /* Add top margin to create space between buttons */
-}
-    
+
   </style>
 </head>
 <body>
@@ -120,7 +117,6 @@
       <button id="skip" class="btn">Next</button>
       <button id="submit" class="btn">Submit</button>
     
-    <button id="previous" class="btn">Previous</button>
     </div>
     <button id="play-again" style="display: none;">Play Again</button>
     <div id="timer"></div>
@@ -330,27 +326,6 @@ function submitAnswer() {
 }
 
 
-    
-const previousButton = document.getElementById('previous');
-
-function togglePreviousButtonVisibility() {
-  if (currentQuestion > 0) {
-    previousButton.style.display = 'block';
-  } else {
-    previousButton.style.display = 'none';
-  }
-}
-
-previousButton.addEventListener('click', () => {
-  if (currentQuestion > 0) {
-    currentQuestion--;
-    showQuestion();
-    togglePreviousButtonVisibility(); // Update button visibility after going to previous question
-  }
-});
-
-// Call the function initially to set the initial visibility state
-togglePreviousButtonVisibility();
     
   </script>
 </body>

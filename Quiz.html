@@ -38,6 +38,9 @@
     .option:hover {
       background-color: #2980b9;
     }
+    .correct {
+      background-color: #2ecc71 !important;
+    }
     #result {
       margin-top: 20px;
       font-size: 18px;
@@ -115,7 +118,8 @@
         const optionButton = document.createElement('button');
         optionButton.textContent = option;
         optionButton.classList.add('option');
-        optionButton.onclick = () => submitAnswer(option);
+        optionButton.dataset.answer = option;
+        optionButton.onclick = () => selectOption(option);
         optionsElement.appendChild(optionButton);
       });
       submitButton.style.display = 'block';
@@ -123,17 +127,41 @@
       startTimer();
     }
 
-    function submitAnswer(option) {
+    function selectOption(option) {
+      if (!submitted) {
+        const selectedOption = optionsElement.querySelector('.selected');
+        if (selectedOption) {
+          selectedOption.classList.remove('selected');
+        }
+        const optionButtons = Array.from(optionsElement.querySelectorAll('.option'));
+        const selectedButton = optionButtons.find(button => button.textContent === option);
+        selectedButton.classList.add('selected');
+      }
+    }
+
+    function submitAnswer() {
       if (!submitted) {
         clearInterval(timer);
         submitted = true;
         const q = quizData[currentQuestion];
-        if (option === q.answer) {
-          score++;
-          resultElement.textContent = 'Correct!';
-          resultElement.style.color = '#2ecc71';
+        const selectedOption = optionsElement.querySelector('.selected');
+        if (selectedOption) {
+          const selectedAnswer = selectedOption.textContent;
+          if (selectedAnswer === q.answer) {
+            score++;
+            resultElement.textContent = 'Correct!';
+            resultElement.style.color = '#2ecc71';
+          } else {
+            resultElement.textContent = `Wrong! Correct answer: ${q.answer}`;
+            resultElement.style.color = '#e74c3c';
+            selectedOption.classList.add('wrong');
+            const correctOption = optionsElement.querySelector(`.option:not(.wrong)[data-answer="${q.answer}"]`);
+            if (correctOption) {
+              correctOption.classList.add('correct');
+            }
+          }
         } else {
-          resultElement.textContent = `Wrong!`;
+          resultElement.textContent = 'Please select an answer';
           resultElement.style.color = '#e74c3c';
         }
         showNextButton();
@@ -182,7 +210,7 @@
 
     playAgainButton.addEventListener('click', () => {
       currentQuestion = 0;
-      score = 0;
+      score =0;
       questionElement.style.display = 'block';
       optionsElement.style.display = 'grid';
       resultElement.textContent = '';

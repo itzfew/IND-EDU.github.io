@@ -170,5 +170,29 @@ function moveSlide(int){
 initPage();
 
 
+let deferredPrompt;
 
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  showInstallButton();
+});
+
+function showInstallButton() {
+  const installButton = document.getElementById('installButton');
+  installButton.classList.add('show');
+
+  installButton.addEventListener('click', (e) => {
+    installButton.classList.remove('show');
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+}
 

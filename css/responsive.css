@@ -194,6 +194,71 @@
 
 }
 
+/* Style for the webshop section */
+#webshop {
+    padding: 20px;
+}
+
+/* Style for the webshop heading */
+#webshop h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style for the shop article */
+.shop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Style for the shop item section */
+.shop-item {
+    width: 300px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the description paragraph */
+.shop-item .description {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Style for the order button */
+.shop-item .order-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the order button */
+.shop-item .order-button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the figure element */
+.shop-item figure {
+    margin: 0;
+}
+
+/* Style for the image within the figure */
+.shop-item figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
 @media only screen and (max-width: 560px) {
 
     .slider {

@@ -47,11 +47,16 @@ h5 {
 h6 {
     color: #000000; 
 }
+p {
+    color: red;
 
+text-decoration: none;
+    
+}
 a {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: bold;
+font-weight: bold;
 }
 
 h1 {

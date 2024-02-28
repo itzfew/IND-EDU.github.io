@@ -209,24 +209,21 @@ function showInstallButton() {
     menu.classList.toggle("show-menu");
 }
 
+// Add your JavaScript code here
 document.addEventListener("DOMContentLoaded", function() {
-  const dropdownBtns = document.querySelectorAll(".dropdown-btn");
-  dropdownBtns.forEach(btn => {
-    btn.addEventListener("click", function() {
-      const content = this.nextElementSibling;
-      content.classList.toggle("show");
+  const heading = document.getElementById("neet-heading");
+  const dropdowns = document.querySelectorAll(".dropdown");
+
+  heading.addEventListener("click", function() {
+    dropdowns.forEach(function(dropdown) {
+      dropdown.classList.toggle("show");
     });
   });
 
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropdown-btn')) {
-      const dropdowns = document.querySelectorAll(".dropdown-content");
-      dropdowns.forEach(content => {
-        if (content.classList.contains('show')) {
-          content.classList.remove('show');
-        }
-      });
-    }
-  }
+  dropdowns.forEach(function(dropdown) {
+    const btn = dropdown.querySelector(".dropdown-btn");
+    btn.addEventListener("click", function() {
+      dropdown.querySelector(".dropdown-content").classList.toggle("show");
+    });
+  });
 });

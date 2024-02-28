@@ -433,17 +433,18 @@ footer {
     
 
 
-
+/* Add your CSS styles here */
 .dropdown {
+  position: relative;
   display: inline-block;
-  margin: 10px;
 }
 
 .dropdown-btn {
   background-color: #3498db;
-  color: white;
-  padding: 10px;
+  color: #fff;
+  padding: 10px 20px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -464,7 +465,7 @@ footer {
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: #ddd;
 }
 
 .show {

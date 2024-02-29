@@ -319,6 +319,7 @@
 }
 
 
+    
 
  .container {
     max-width: 800px;
@@ -416,4 +417,15 @@
 .modal-button:hover {
     background-color: #333;
     color: #fff;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    background-image: url('slide_1.png'); /* Add the path to your background image */
+    background-size: cover; /* Cover the entire content area */
+    background-position: center; /* Center the background image */
 }

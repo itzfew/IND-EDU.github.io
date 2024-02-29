@@ -47,7 +47,34 @@
                 aimed at sharing informative and helpful content.</p></center>
 </b>
 </article>
+            
     </section>
+<section id="grid" class="container">
+        <div class="grid">
+            <div class="cell" onclick="handleCellClick('cell1', 'Image 1', 'Description for Image 1', 'https://example.com')">
+                <img src="image1.jpg" alt="Image 1">
+                <div class="cell-content">Cell 1</div>
+            </div>
+            <!-- Add more cells as needed -->
+        </div>
+    </div>
+</section>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <div id="modal-buttons">
+                <!-- Buttons will be added dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for handling cell clicks -->
+    <script src="main.js"></script>
+
+        
     <!-- season info -->
     <section id="seasons" class="container">
         <h1 class="highlight">All seasons</h1>

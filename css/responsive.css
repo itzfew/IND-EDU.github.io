@@ -318,18 +318,20 @@
   display: block;
 }
 
-
-    
-
- .container {
+.container {
     max-width: 800px;
     margin: 20px auto;
+    background-image: url('slide_1.png'); /* Add the path to your background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    padding: 20px; /* Add padding to create space between cells and edges */
+    background-color: rgba(255, 255, 255, 0.8); /* Add a background color with opacity */
 }
 
 .cell {
@@ -365,7 +367,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* The Modal */
 .modal {
     display: none;
     position: fixed;
@@ -387,21 +388,6 @@
     border-radius: 10px;
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Add this CSS for modal buttons */
 .modal-button {
     padding: 10px 20px;
     margin: 0 10px;
@@ -418,14 +404,30 @@
     background-color: #333;
     color: #fff;
 }
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    border-radius: 10px;
-    background-image: url('slide_1.png'); /* Add the path to your background image */
-    background-size: cover; /* Cover the entire content area */
-    background-position: center; /* Center the background image */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px; /* Add padding to create space between cells and edges */
+    background-image: url('slide_1.png'); /* Add the path to your background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-color: rgba(255, 255, 255, 0.8); /* Add a background color with opacity */
+}
+    

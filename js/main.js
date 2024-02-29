@@ -209,3 +209,46 @@ function showInstallButton() {
     menu.classList.toggle("show-menu");
 }
 
+// JavaScript for handling cell clicks and modal close
+document.addEventListener("DOMContentLoaded", function() {
+    var closeButtons = document.getElementsByClassName("close");
+    for (var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].addEventListener("click", function() {
+            closeModal();
+        });
+    }
+});
+
+function handleCellClick(cellId, title, description, link) {
+    // Get the modal element
+    var modal = document.getElementById("myModal");
+
+    // Get the modal content elements
+    var modalTitle = document.getElementById("modal-title");
+    var modalDescription = document.getElementById("modal-description");
+    var modalButtons = document.getElementById("modal-buttons");
+
+    // Set the modal content based on the clicked cell
+    modalTitle.textContent = title;
+    modalDescription.textContent = description;
+
+    // Set up buttons
+    modalButtons.innerHTML = '<button class="modal-button" onclick="openLink(\'' + link + '\')">Open</button>' +
+                              '<button class="modal-button" onclick="closeModal()">Back</button>';
+
+    // Open the modal
+    modal.style.display = "block";
+}
+
+function openLink(link) {
+    // Open the link
+    window.open(link, "_blank");
+}
+
+function closeModal() {
+    // Get the modal element
+    var modal = document.getElementById("myModal");
+
+    // Close the modal
+    modal.style.display = "none";
+}

@@ -425,7 +425,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px; /* Add padding to create space between cells and edges */
-    background-image: url('slide_1.png'); /* Add the path to your background image */
+    background-image: url('img/slider/slide_1.png'); /* Add the path to your background image */
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
     background-color: rgba(255, 255, 255, 0.8); /* Add a background color with opacity */

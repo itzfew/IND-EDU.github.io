@@ -118,56 +118,6 @@ class Classie {
     }
 }
 
-EpSlider = 1;
-prevEpSlider = EpSlider;
-function nextEp(){
-    EpSlider += 1
-    if(EpSlider >= 3)
-        EpSlider = 1;
-    getElementById("ep" + EpSlider).style.opacity = 1;
-    getElementById("ep" + prevEpSlider).style.opacity = 0;
-
-    getElementById("episode-number").innerHTML  = "No. #" + EpSlider;
-
-    prevEpSlider = EpSlider;
-
-}
-
-function prevEp(){
-    prevSlide = slideCounter;
-    slideCounter -= 1;
-    moveSlide(1);
-}
-MIN_SlIDES = 1;
-MAX_SLIDES = 2;
-function next(){
-    clearInterval(autoSlider);
-    slideCounter += 1;
-    prevSlide = slideCounter - 1;
-    moveSlide();
-}
-function moveSlide(int){
-
-
-    if(prevSlide < MIN_SlIDES )
-        prevSlide = MAX_SLIDES;
-
-    if(slideCounter > MAX_SLIDES)
-        slideCounter = MIN_SlIDES;
-
-    if(slideCounter < MIN_SlIDES)
-        slideCounter = MAX_SLIDES;
-
-    getElementById("slide" + prevSlide).style.opacity = 0;
-    getElementById("p" + prevSlide).classList.remove("pActive");
-    getElementById("slide" + slideCounter).style.opacity = 1;
-    getElementById("p" + slideCounter).classList.add("pActive");
-
-    console.log(prevSlide, slideCounter);
-    autoSlider = setInterval(next, 4000)
-}
-
-initPage();
 
 
 let deferredPrompt;

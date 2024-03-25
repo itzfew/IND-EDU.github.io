@@ -21,9 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         // Add more book objects as needed
     ];
-
-
-How to create another file for this separately 
+    
     // Function to create book post HTML
     function createBookPost(book) {
         const bookPost = document.createElement('div');

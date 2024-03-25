@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Create celebration animation element
+    var celebrationAnimation = document.getElementById('celebration-animation');
+    celebrationAnimation.classList.add('show');
+
+    // Set a timeout to remove the animation after 10 seconds
+    setTimeout(function() {
+        celebrationAnimation.classList.remove('show');
+    }, 10000); // 10 seconds (10000 milliseconds)
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
     const booksCatalogue = document.querySelector('.books-catalogue');
 
     // Simulated data for demonstration

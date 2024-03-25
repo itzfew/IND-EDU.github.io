@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+x<!DOCTYPE html>
 <html lang="en">
 <head> 
     <meta charset="UTF-8">
@@ -38,7 +38,7 @@
     <div class="logo">IND EDUCATION</div>
     <ul class="menu-items">
         <li><a href="#">Home</a></li>
-       
+       <li><a href="timer.html">Timer</a></li>
         <li><a href="#books-catalogue">Books</a></li>
         <li class="dropdown">
             <a href="#">Test Series</a>
@@ -105,11 +105,17 @@ button:active {
     transform: translateY(2px);
     border-color: #666; /* Change border color on click */
 }
-  
+  .timer-heading {
+    font-weight: bold; /* Make the heading bold */
+    text-decoration: underline; /* Add underline */
+    color: #3366ff; /* Choose your desired color */
+    border-bottom: 2px solid #000; /* Add a border */
+    padding-bottom: 5px; /* Adjust padding for spacing */
+}
 </style>
 </head>
 <body>
-
+<h1 class="timer-heading">TIMER</h1>
 <div class="timer-container">
   <div class="timer" id="timerDisplay">00:00:00.000</div>
   <div class="records" id="recordsDisplay"></div>

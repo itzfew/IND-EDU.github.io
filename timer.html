@@ -52,6 +52,7 @@
   let elapsedTime = 0;
   let isTimerRunning = false;
   let recordCount = 0;
+  let lastRecordTime = 0;
 
   // Function to start the timer
   function startTimer() {
@@ -68,12 +69,14 @@
     isTimerRunning = false;
   }
 
-  // Function to reset the timer
+  // Function to reset the timer and records
   function resetTimer() {
     clearInterval(timerInterval);
     isTimerRunning = false;
     elapsedTime = 0;
-    updateTimer();
+    lastRecordTime = 0;
+    document.getElementById('timerDisplay').textContent = '00:00:00.000';
+    document.getElementById('recordsDisplay').innerHTML = '';
   }
 
   // Function to update the timer display
@@ -106,7 +109,8 @@
   // Function to create a record
   function createRecord() {
     if (isTimerRunning) {
-      const recordTime = elapsedTime;
+      const recordTime = elapsedTime - lastRecordTime;
+      lastRecordTime = elapsedTime;
       const recordHours = Math.floor(recordTime / (1000 * 60 * 60));
       const recordMinutes = Math.floor((recordTime % (1000 * 60 * 60)) / (1000 * 60));
       const recordSeconds = Math.floor((recordTime % (1000 * 60)) / 1000);

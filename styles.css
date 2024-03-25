@@ -306,3 +306,26 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* Styles for user messages */
+.user-message {
+  background-color: #e6e6e6; /* Light gray */
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+/* Styles for bot messages */
+.bot-message {
+  background-color: #007bff; /* Blue */
+  color: white;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer; /* Make bot messages clickable */
+}
+
+/* Style for clickable bot messages */
+.bot-message:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

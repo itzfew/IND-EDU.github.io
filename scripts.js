@@ -87,3 +87,20 @@ document.addEventListener('DOMContentLoaded', function() {
     var latestDateElement = document.getElementById('latest-date');
     latestDateElement.textContent = "Latest Date: " + formattedDate;
 });
+
+// Function to toggle chatbot popup
+function toggleChat() {
+  var chatPopup = document.getElementById("chatPopup");
+  chatPopup.style.display === "none" ? chatPopup.style.display = "block" : chatPopup.style.display = "none";
+}
+
+// Function to send message
+function sendMessage() {
+  var userInput = document.getElementById("userInput").value;
+  var chatMessages = document.getElementById("chatMessages");
+  var messageElement = document.createElement("div");
+  messageElement.textContent = userInput;
+  chatMessages.appendChild(messageElement);
+  document.getElementById("userInput").value = "";
+}
+        

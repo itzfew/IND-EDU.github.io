@@ -1,27 +1,30 @@
-/* styles.css */
+/* Your CSS styles for navigation, footer, and books catalogue */
 
+.books-catalogue {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
 
-.stats-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f0f0f0;
+.book-post {
+    border: 1px solid #ccc;
     padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
 }
 
-.stat {
-    text-align: center;
+.book-post img {
+    max-width: 100%;
+    height: auto;
 }
 
-.number {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-}
-
-.description {
+.book-post p {
     font-size: 14px;
-    color: #666;
+}
+
+.book-post .download-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
 }

@@ -4,7 +4,7 @@
     font-weight: bold; /* Apply bold font weight */
     color: #ff00ff; /* Apply color */
     margin: 0 auto; /* Center horizontally */
-    border-bottom: 2px solid #ff00ff; /* Add colored border */
+    border-bottom: 4px solid #ff00ff; /* Add colored border */
     padding-bottom: 10px; /* Add space below the border */
 }
 
@@ -16,8 +16,7 @@
 .books-catalogue h2 {
     text-align: center;
     border-bottom: 2px solid #ff00ff; /* Add colored border */
-    padding-bottom: 10px; /* Add space below the border */
-    font-weight: bold;
+        font-weight: bold;
 }
 .book-post {
     border: 1px solid #ccc;

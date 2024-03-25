@@ -233,7 +233,6 @@ footer {
     padding: 10px 0;
     }
 
-
 /* Example animation for the chatbot popup */
 @keyframes fadeIn {
   from {
@@ -242,11 +241,6 @@ footer {
   to {
     opacity: 1;
   }
-}
-
-.chat-popup {
-  /* Your existing styles */
-  animation: fadeIn 0.3s ease forwards; /* Apply animation to fade in the chat popup */
 }
 
 /* Styles for the chatbot circle icon */
@@ -276,6 +270,7 @@ footer {
   border-radius: 10px;
   overflow: hidden;
   display: none;
+  animation: fadeIn 0.3s ease forwards; /* Apply animation to fade in the chat popup */
 }
 
 .chat-content {
@@ -329,6 +324,7 @@ button {
 .bot-message:hover {
   background-color: #0056b3; /* Darker blue on hover */
 }
+
 /* Styles for the profile panel */
 .profile-panel {
   position: fixed;

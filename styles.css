@@ -110,7 +110,20 @@
         display: block; /* Show menu items when menu is toggled */
     }
 }
-        
+
+
+#share-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#share-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+
 .about {
     padding: 20px;
     border-radius: 10px;

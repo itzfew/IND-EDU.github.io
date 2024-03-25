@@ -1,44 +1,43 @@
 
-#celebration-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none; /* Allow user interaction with elements behind the animation */
-}
+/* CSS styles for celebration items */
+        .balloon {
+            width: 20px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            animation: balloonAnimation linear infinite alternate;
+        }
 
-.balloon {
-    position: absolute;
-    width: 30px;
-    height: 50px;
-    background-color: #ff6384; /* Balloon color */
-    border-radius: 50%;
-    animation: balloon-rise 5s linear infinite, balloon-float 5s linear infinite; /* Balloon animation */
-}
+        .flower {
+            width: 30px;
+            height: 30px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+            animation: flowerAnimation linear infinite alternate;
+        }
 
-/* Balloon rise animation */
-@keyframes balloon-rise {
-    from {
-        bottom: -50px; /* Start below the viewport */
-    }
-    to {
-        bottom: 100vh; /* End above the viewport */
-    }
-}
+        .firework {
+            width: 10px;
+            height: 10px;
+            background-color: orange;
+            border-radius: 50%;
+            position: absolute;
+            animation: fireworkAnimation linear infinite alternate;
+        }
 
-/* Balloon float animation */
-@keyframes balloon-float {
-    0%, 100% {
-        transform: translateX(0); /* Float horizontally */
-    }
-    50% {
-        transform: translateX(20px); /* Move right */
-    }
-    75% {
-        transform: translateX(-20px); /* Move left */
-    }
-}
+        /* CSS styles for the celebration message */
+        .celebration-message {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
 
 
 #latest-date {

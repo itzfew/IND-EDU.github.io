@@ -329,3 +329,17 @@ button {
 .bot-message:hover {
   background-color: #0056b3; /* Darker blue on hover */
 }
+/* Styles for the profile panel */
+.profile-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #f1f1f1;
+  border-left: 1px solid #ccc;
+  display: none; /* Initially hidden */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}

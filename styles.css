@@ -4,8 +4,7 @@
     font-weight: bold; /* Apply bold font weight */
     color: #ff00ff; /* Apply color */
     margin: 0 auto; /* Center horizontally */
-    border-bottom: 4px solid #ff00ff; /* Add colored border */
-    padding-bottom: 10px; /* Add space below the border */
+    
 }
 
 .books-catalogue {
@@ -109,6 +108,8 @@
     .menu-items.active {
         display: block; /* Show menu items when menu is toggled */
     }
+border-bottom: 4px solid #ff00ff; /* Add colored border */
+    padding-bottom: 10px; /* Add space below the border */
 }
 
 

@@ -3,24 +3,31 @@ document.addEventListener('DOMContentLoaded', function() {
     var currentDate = new Date();
 
     // Check if it's a specific date (15th August, 26th January, or 25th March)
-    if ((currentDate.getMonth() === 7 && currentDate.getDate() === 15) || 
-        (currentDate.getMonth() === 0 && currentDate.getDate() === 26) || 
-        (currentDate.getMonth() === 2 && currentDate.getDate() === 25)) {
-        // Show celebration animation for 15th August, 26th January, or 25th March
-        startCelebrationAnimation();
+    if ((currentDate.getMonth() === 7 && currentDate.getDate() === 15)) {
+        // Show celebration animation for 15th August (Independence Day)
+        startCelebrationAnimation("Independence Day", "balloon");
+    } else if ((currentDate.getMonth() === 0 && currentDate.getDate() === 26)) {
+        // Show celebration animation for 26th January (Republic Day)
+        startCelebrationAnimation("Republic Day", "flower");
+    } else if ((currentDate.getMonth() === 2 && currentDate.getDate() === 25)) {
+        // Show celebration animation for 25th March (Another Celebration)
+        startCelebrationAnimation("Another Celebration", "firework");
     }
 });
 
 // Function to start the celebration animation
-function startCelebrationAnimation() {
+function startCelebrationAnimation(celebrationName, type) {
     // Create celebration animation elements
     var celebrationAnimation = document.getElementById('celebration-animation');
-    var balloons = createBalloons(50); // Create 50 balloons
+    var items = createItems(50, type); // Create 50 items of the specified type
 
-    // Append balloons to celebration animation
-    balloons.forEach(function(balloon) {
-        celebrationAnimation.appendChild(balloon);
+    // Append items to celebration animation
+    items.forEach(function(item) {
+        celebrationAnimation.appendChild(item);
     });
+
+    // Show celebration message
+    showCelebrationMessage(celebrationName);
 
     // Remove celebration animation after 10 seconds
     setTimeout(function() {
@@ -28,39 +35,26 @@ function startCelebrationAnimation() {
     }, 10000); // 10 seconds
 }
 
-// Function to create a balloon element
-function createBalloon() {
-    var balloon = document.createElement('div');
-    balloon.classList.add('balloon');
-    balloon.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-    balloon.style.animationDuration = Math.random() * 5 + 5 + 's'; // Random animation duration (5-10 seconds)
-    return balloon;
+// Function to create a celebration item element
+function createItem(type) {
+    var item = document.createElement('div');
+    item.classList.add(type);
+    item.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+    item.style.animationDuration = Math.random() * 5 + 5 + 's'; // Random animation duration (5-10 seconds)
+    return item;
 }
 
-// Function to create multiple balloons
-function createBalloons(numBalloons) {
-    var balloons = [];
-    for (var i = 0; i < numBalloons; i++) {
-        balloons.push(createBalloon());
+// Function to create multiple celebration items
+function createItems(numItems, type) {
+    var items = [];
+    for (var i = 0; i < numItems; i++) {
+        items.push(createItem(type));
     }
-    return balloons;
+    return items;
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the current date
-    var currentDate = new Date();
-
-    // Check if it's a specific date (15th August, 26th January, or 25th March)
-    if ((currentDate.getMonth() === 7 && currentDate.getDate() === 15) || 
-        (currentDate.getMonth() === 0 && currentDate.getDate() === 26) || 
-        (currentDate.getMonth() === 2 && currentDate.getDate() === 25)) {
-        // Show celebration animation for 15th August, 26th January, or 25th March
-        showCelebration("Independence Day");
-    }
-});
 
 // Function to show the celebration message
-function showCelebration(celebrationName) {
+function showCelebrationMessage(celebrationName) {
     // Display the celebration message at the top of the page
     var celebrationMessage = document.createElement('div');
     celebrationMessage.textContent = "Today is " + celebrationName + "!";

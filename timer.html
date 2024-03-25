@@ -20,6 +20,12 @@
     margin-bottom: 10px;
   }
 
+  /* Styles for the records */
+  .records {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
   /* Styles for the buttons */
   button {
     margin: 5px;
@@ -33,9 +39,10 @@
 
 <div class="timer-container">
   <div class="timer" id="timerDisplay">00:00:00.000</div>
+  <div class="records" id="recordsDisplay"></div>
   <button onclick="startTimer()">Start</button>
   <button onclick="pauseTimer()">Pause</button>
-  <button onclick="stopTimer()">Stop</button>
+  <button onclick="resetTimer()">Reset</button>
   <button onclick="createRecord()">Create Record</button>
 </div>
 
@@ -61,8 +68,8 @@
     isTimerRunning = false;
   }
 
-  // Function to stop the timer
-  function stopTimer() {
+  // Function to reset the timer
+  function resetTimer() {
     clearInterval(timerInterval);
     isTimerRunning = false;
     elapsedTime = 0;
@@ -106,7 +113,8 @@
       const recordMilliseconds = Math.floor((recordTime % 1000));
 
       const record = `Record ${++recordCount}: ${padZero(recordHours)}:${padZero(recordMinutes)}:${padZero(recordSeconds)}.${padZero(recordMilliseconds, 3)}`;
-      console.log(record);
+      const recordsDisplay = document.getElementById('recordsDisplay');
+      recordsDisplay.innerHTML += `<div>${record}</div>`;
     }
   }
 </script>

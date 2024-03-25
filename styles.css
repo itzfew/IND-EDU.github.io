@@ -1,4 +1,10 @@
 /* Your CSS styles for navigation, footer, and books catalogue */
+.logo {
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Apply bold font weight */
+    color: #ff00ff; /* Apply color */
+    margin: 0 auto; /* Center horizontally */
+}
 
 .books-catalogue {
     display: grid;
@@ -44,6 +50,44 @@
     margin: 5px auto;
 }
 
+.menu-items {
+    margin-top: 10px; /* Add gap between lists */
+}
+
+.menu-items li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu-items li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu-items li:hover .dropdown-menu {
+    display: block;
+}
+
+.menu-items li .dropdown-menu li {
+    display: block;
+    margin: 5px 0;
+}
+
+.menu-items li .dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-items li .dropdown-menu li a:hover {
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 768px) {
     .menu-toggle {
         display: block; /* Show on smaller screens */
@@ -58,7 +102,6 @@
         display: block; /* Show menu items when menu is toggled */
     }
 }
-
 footer {
     background-color: #222; /* Dark black color */
     color: #fff; /* Text color */

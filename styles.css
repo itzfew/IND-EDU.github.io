@@ -28,3 +28,23 @@
     display: inline-block;
     border-radius: 5px;
 }
+
+.menu-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-items li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu-items li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-items li a:hover {
+    text-decoration: underline;
+}

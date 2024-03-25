@@ -35,3 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Populate books catalogue
     books.forEach(book => createBookPost(book));
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuItems = document.querySelector('.menu-items');
+
+    menuToggle.addEventListener('click', function() {
+        menuItems.classList.toggle('active');
+    });
+});

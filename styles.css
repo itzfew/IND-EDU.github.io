@@ -31,6 +31,17 @@
 
 .menu-toggle {
     display: none; /* Hide by default on larger screens */
+    background-color: #000; /* Black background color */
+    width: 30px; /* Adjust width as needed */
+    height: 30px; /* Adjust height as needed */
+    position: relative;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -46,16 +57,7 @@
     .menu-items.active {
         display: block; /* Show menu items when menu is toggled */
     }
-
-    .bar {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 5px 0;
-    }
 }
-
-
 
 footer {
     background-color: #222; /* Dark black color */

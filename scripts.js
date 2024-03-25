@@ -1,49 +1,4 @@
-// Function to start the celebration animation
-function startCelebrationAnimation(celebrationName) {
-    // Create celebration animation elements
-    var celebrationAnimation = document.getElementById('celebration-animation');
-    var items = createItems(50); // Create 50 items of random types
 
-    // Append items to celebration animation
-    items.forEach(function(item) {
-        celebrationAnimation.appendChild(item);
-    });
-
-    // Show celebration message
-    showCelebrationMessage(celebrationName);
-
-    // Remove celebration animation after 10 seconds
-    setTimeout(function() {
-        celebrationAnimation.innerHTML = ''; // Clear celebration animation
-    }, 10000); // 10 seconds
-}
-
-// Function to create a random celebration item element
-function createRandomItem() {
-    var randomType = Math.floor(Math.random() * 3); // Generate random number between 0 and 2
-    var type;
-    switch(randomType) {
-        case 0:
-            type = "balloon";
-            break;
-        case 1:
-            type = "flower";
-            break;
-        case 2:
-            type = "firework";
-            break;
-    }
-    return createItem(type);
-}
-
-// Function to create multiple celebration items
-function createItems(numItems) {
-    var items = [];
-    for (var i = 0; i < numItems; i++) {
-        items.push(createRandomItem());
-    }
-    return items;
-}
 
 
 document.addEventListener('DOMContentLoaded', function() {

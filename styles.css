@@ -1,44 +1,67 @@
 
-/* CSS styles for celebration items */
-        .balloon {
-            width: 20px;
-            height: 30px;
-            background-color: red;
-            border-radius: 50%;
-            position: absolute;
-            animation: balloonAnimation linear infinite alternate;
-        }
+/* Styles for celebration animations */
+.balloon {
+  position: absolute;
+  width: 50px;
+  height: 70px;
+  background-color: #f00;
+  border-radius: 50%;
+  animation: balloonAnimation 5s linear infinite;
+}
 
-        .flower {
-            width: 30px;
-            height: 30px;
-            background-color: yellow;
-            border-radius: 50%;
-            position: absolute;
-            animation: flowerAnimation linear infinite alternate;
-        }
+.flower {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #0f0;
+  border-radius: 50%;
+  animation: flowerAnimation 5s linear infinite;
+}
 
-        .firework {
-            width: 10px;
-            height: 10px;
-            background-color: orange;
-            border-radius: 50%;
-            position: absolute;
-            animation: fireworkAnimation linear infinite alternate;
-        }
+.firework {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #00f;
+  border-radius: 50%;
+  animation: fireworkAnimation 5s linear infinite;
+}
 
-        /* CSS styles for the celebration message */
-        .celebration-message {
-            position: fixed;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-        }
+@keyframes balloonAnimation {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-1000px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
 
+@keyframes flowerAnimation {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-1000px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+@keyframes fireworkAnimation {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-1000px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
 
 #latest-date {
     padding: 10px;

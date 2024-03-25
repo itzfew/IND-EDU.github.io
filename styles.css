@@ -29,25 +29,33 @@
     border-radius: 5px;
 }
 
-.menu-items {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.menu-toggle {
+    display: none; /* Hide by default on larger screens */
 }
 
-.menu-items li {
-    display: inline-block;
-    margin-right: 20px;
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show on smaller screens */
+        cursor: pointer;
+    }
+
+    .menu-items {
+        display: none; /* Hide menu items by default on smaller screens */
+    }
+
+    .menu-items.active {
+        display: block; /* Show menu items when menu is toggled */
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
 }
 
-.menu-items li a {
-    color: #fff;
-    text-decoration: none;
-}
 
-.menu-items li a:hover {
-    text-decoration: underline;
-}
 
 footer {
     background-color: #222; /* Dark black color */

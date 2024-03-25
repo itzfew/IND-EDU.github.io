@@ -1,13 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Create celebration animation element
+    // Create celebration animation elements
     var celebrationAnimation = document.getElementById('celebration-animation');
-    celebrationAnimation.classList.add('show');
+    var balloons = createBalloons(50); // Create 50 balloons
 
-    // Set a timeout to remove the animation after 10 seconds
+    // Append balloons to celebration animation
+    balloons.forEach(function(balloon) {
+        celebrationAnimation.appendChild(balloon);
+    });
+
+    // Remove celebration animation after 10 seconds
     setTimeout(function() {
-        celebrationAnimation.classList.remove('show');
-    }, 10000); // 10 seconds (10000 milliseconds)
+        celebrationAnimation.innerHTML = ''; // Clear celebration animation
+    }, 10000); // 10 seconds
 });
+
+// Function to create a balloon element
+function createBalloon() {
+    var balloon = document.createElement('div');
+    balloon.classList.add('balloon');
+    balloon.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+    balloon.style.animationDuration = Math.random() * 5 + 5 + 's'; // Random animation duration (5-10 seconds)
+    return balloon;
+}
+
+// Function to create multiple balloons
+function createBalloons(numBalloons) {
+    var balloons = [];
+    for (var i = 0; i < numBalloons; i++) {
+        balloons.push(createBalloon());
+    }
+    return balloons;
+}
+
 
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-        
+<script>
     // Replace 'YOUR_CHANNEL_ID' with your YouTube channel ID
     const channelID = 'YOUR_CHANNEL_ID';
     const rssFeedURL = `https://www.youtube.com/feeds/videos.xml?channel_id=UCesoR53UGW3yM7owERXa4RQ`;

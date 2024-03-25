@@ -232,3 +232,63 @@ footer {
     color: #fff;
     padding: 10px 0;
     }
+
+
+
+/* Styles for the chatbot circle icon */
+.chat-circle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Styles for the chatbot popup */
+.chat-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+}
+
+.chat-content {
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Styles for chat messages */
+.chat-messages {
+  margin-bottom: 10px;
+}
+
+/* Styles for user input and send button */
+input[type="text"] {
+  width: calc(100% - 70px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+button {
+  width: 60px;
+  padding: 8px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}

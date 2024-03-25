@@ -16,69 +16,7 @@
 }
 
 
-/* Styles for celebration animations */
-.balloon {
-  position: absolute;
-  width: 50px;
-  height: 70px;
-  background-color: #f00;
-  border-radius: 50%;
-  animation: balloonAnimation 5s linear infinite;
-}
 
-.flower {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: #0f0;
-  border-radius: 50%;
-  animation: flowerAnimation 5s linear infinite;
-}
-
-.firework {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #00f;
-  border-radius: 50%;
-  animation: fireworkAnimation 5s linear infinite;
-}
-
-@keyframes balloonAnimation {
-  0% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(-1000px) rotate(0);
-  }
-  100% {
-    transform: translateY(0) rotate(360deg);
-  }
-}
-
-@keyframes flowerAnimation {
-  0% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(-1000px) rotate(0);
-  }
-  100% {
-    transform: translateY(0) rotate(360deg);
-  }
-}
-
-@keyframes fireworkAnimation {
-  0% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(-1000px) rotate(0);
-  }
-  100% {
-    transform: translateY(0) rotate(360deg);
-  }
-}
 
 #latest-date {
     padding: 10px;

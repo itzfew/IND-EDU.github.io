@@ -95,6 +95,37 @@ function createFlowers(numFlowers) {
 }
 
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the current date
+    var currentDate = new Date();
+
+    // Check if it's a specific date (15th August, 26th January, or 25th March)
+    if ((currentDate.getMonth() === 7 && currentDate.getDate() === 15) || 
+        (currentDate.getMonth() === 0 && currentDate.getDate() === 26) || 
+        (currentDate.getMonth() === 2 && currentDate.getDate() === 25)) {
+        // Show celebration animation for 15th August, 26th January, or 25th March
+        showCelebration("Independence Day");
+    }
+});
+
+// Function to show the celebration message
+function showCelebration(celebrationName) {
+    // Display the celebration message at the top of the page
+    var celebrationMessage = document.createElement('div');
+    celebrationMessage.textContent = "Today is " + celebrationName + "!";
+    celebrationMessage.classList.add('celebration-message');
+    document.body.appendChild(celebrationMessage);
+
+    // Remove the celebration message after 10 seconds
+    setTimeout(function() {
+        celebrationMessage.remove();
+    }, 10000); // 10 seconds
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const booksCatalogue = document.querySelector('.books-catalogue');
 

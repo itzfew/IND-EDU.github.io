@@ -1,9 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Timer with Records</title>
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IND EDUCATION</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Other head elements -->
+    <!-- Google Analytics tracking code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=429423002"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '429423002');
+    </script>
+    
+</head>
+<body>
+
+
+
+
+   
+    
+     <!-- Latest Date -->
+    <div id="latest-date"></div>
+    <header>
+      <nav class="top-menu">
+    <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="logo">IND EDUCATION</div>
+    <ul class="menu-items">
+        <li><a href="#">Home</a></li>
+       
+        <li><a href="#books-catalogue">Books</a></li>
+        <li class="dropdown">
+            <a href="#">Test Series</a>
+            <ul class="dropdown-menu">
+                <li><a href="https://t.me/NEETJEECHANNEL">Akash</a></li>
+                <li><a href="https://t.me/NEETJEECHANNEL">Allen</a></li>
+                <li><a href="https://t.me/NEETJEECHANNEL">Physics Wallah</a></li>
+           
+            </ul>
+        </li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#footer-section">Contact Us</a></li>
+    </ul>
+            <button id="share-btn">
+            <img src="img/share-icon-40120.png" alt="Share Icon">
+            </button>
+</nav>
+    </header>
 <style>
   /* Styles for the timer container */
   .timer-container {
@@ -66,6 +119,46 @@ button:active {
   <button onclick="createRecord()">Create Record</button>
 </div>
 
+    <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>Welcome to IND Education Hub! We are dedicated to providing high-quality educational content to students worldwide. Our mission is to empower learners with knowledge and skills to succeed in their academic and professional endeavors.</p>
+    <p>At IND Education Hub, we offer a wide range of resources, including study materials, tutorials, and exam preparation guides, covering various subjects and topics. Whether you're preparing for competitive exams, improving your grades in school, or simply seeking to expand your knowledge, we're here to support your learning journey.</p>
+    <p>Stay tuned for updates on our latest content, educational resources, and more!</p>
+</section>
+
+       <footer>
+           <section class="footer-section" id="footer-section">
+        <div class="footer-section">
+            <h3>Exams</h3>
+            <ul>
+                <li>NEET</li>
+                <li>JEE</li>
+                <li>CUET</li>
+                <li>Boards</li>
+            </ul>
+            <p>Contact: email: <a href="mailto:contactus94@yahoo.com">contactus94@yahoo.com</a></p>
+        </div>
+        <div class="footer-section">
+            <h3>Free Test Series</h3>
+<ul>
+    <li>AKASH AIATS <button><a href="https://t.me/NEETJEECHANNEL">Get</a></button></li>
+    <li>ALLEN AITS <button><a href="https://t.me/NEETJEECHANNEL">Get</a></button></li>
+    <li>Physics Wallah AITS <button><a href="https://t.me/NEETJEECHANNEL">Get</a></button></li>
+    <br>
+    <li>AKASH NBTS <button><a href="https://t.me/NEETJEECHANNEL">Get</a></button></li>
+    <li>AKASH FTS <button><a href="https://t.me/NEETJEECHANNEL">Get</a></button></li>
+    <li>AKASH PST <button><a href="https://t.me/NEETJEECHANNEL">Get</a></button></li>
+</ul>
+</div>
+    </footer>
+    <footer class="copyright">
+    <p>&copy; 2024 Created by Itzfew</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+
+
+  
 <script>
   let timerInterval;
   let startTime;
@@ -143,5 +236,6 @@ button:active {
   }
 </script>
 
+    
 </body>
 </html>

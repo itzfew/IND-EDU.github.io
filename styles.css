@@ -115,6 +115,28 @@
         display: block; /* Show menu items when menu is toggled */
     }
 }
+        
+.about {
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-image: url('img/slider/slide_1.png'); /* Replace 'your-background-image.jpg' with the path to your background image */
+    background-size: cover; /* Cover the entire section with the background image */
+    color: #ffffff; /* Set text color to white for better readability */
+}
+
+.about h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+        
 footer {
     background-color: #222; /* Dark black color */
     color: #fff; /* Text color */

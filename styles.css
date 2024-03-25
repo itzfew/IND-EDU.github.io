@@ -196,3 +196,10 @@ footer {
 .footer-section ul li button:hover {
     background-color: #0056b3;
 }
+/* Additional footer for copyright */
+.footer.copyright {
+    text-align: center;
+    background-color: #007bff; /* Change to your desired color */
+    color: #fff;
+    padding: 10px 0;
+    }

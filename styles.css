@@ -11,7 +11,12 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
-
+.books-catalogue h2 {
+    text-align: center;
+    border-bottom: 2px solid #ff00ff; /* Add colored border */
+    padding-bottom: 10px; /* Add space below the border */
+    font-weight: bold;
+}
 .book-post {
     border: 1px solid #ccc;
     padding: 20px;

@@ -49,6 +49,12 @@
     text-decoration: underline;
 }
 
+footer {
+    background-color: #222; /* Dark black color */
+    color: #fff; /* Text color */
+    padding: 20px;
+}
+
 .footer-section {
     margin-bottom: 20px;
 }
@@ -79,4 +85,17 @@
 
 .footer-section p a:hover {
     text-decoration: underline;
+}
+
+.footer-section ul li button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-section ul li button:hover {
+    background-color: #0056b3;
 }

@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Get the current date
+    var currentDate = new Date();
+
+    // Check if it's a specific date (15th August, 26th January, or 25th March)
+    if ((currentDate.getMonth() === 7 && currentDate.getDate() === 15) || 
+        (currentDate.getMonth() === 0 && currentDate.getDate() === 26) || 
+        (currentDate.getMonth() === 2 && currentDate.getDate() === 25)) {
+        // Show celebration animation for 15th August, 26th January, or 25th March
+        startCelebrationAnimation();
+    }
+});
+
+// Function to start the celebration animation
+function startCelebrationAnimation() {
     // Create celebration animation elements
     var celebrationAnimation = document.getElementById('celebration-animation');
     var balloons = createBalloons(50); // Create 50 balloons
@@ -12,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         celebrationAnimation.innerHTML = ''; // Clear celebration animation
     }, 10000); // 10 seconds
-});
+}
 
 // Function to create a balloon element
 function createBalloon() {
@@ -31,9 +45,6 @@ function createBalloons(numBalloons) {
     }
     return balloons;
 }
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const booksCatalogue = document.querySelector('.books-catalogue');
 

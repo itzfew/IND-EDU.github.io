@@ -1,3 +1,20 @@
+/* Logo styling */
+.logo {
+  display: block;
+  width: 150px; /* Adjust the width as needed */
+  height: auto;
+  margin: 0 auto; /* Center the logo horizontally */
+}
+
+/* Example of applying the logo to an element */
+.header-logo {
+  background-image: url('img/Logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+}
+
 
 /* Styles for celebration animations */
 .balloon {

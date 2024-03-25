@@ -15,23 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
 function startCelebrationAnimation() {
     // Create celebration animation elements
     var celebrationAnimation = document.getElementById('celebration-animation');
-
-    // Balloons
     var balloons = createBalloons(50); // Create 50 balloons
+
+    // Append balloons to celebration animation
     balloons.forEach(function(balloon) {
         celebrationAnimation.appendChild(balloon);
-    });
-
-    // Confetti
-    var confetti = createConfetti(100); // Create 100 confetti particles
-    confetti.forEach(function(particle) {
-        celebrationAnimation.appendChild(particle);
-    });
-
-    // Flowers
-    var flowers = createFlowers(20); // Create 20 flowers
-    flowers.forEach(function(flower) {
-        celebrationAnimation.appendChild(flower);
     });
 
     // Remove celebration animation after 10 seconds
@@ -57,44 +45,6 @@ function createBalloons(numBalloons) {
     }
     return balloons;
 }
-
-// Function to create a confetti particle
-function createConfettiParticle() {
-    var particle = document.createElement('div');
-    particle.classList.add('confetti');
-    particle.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-    particle.style.animationDuration = Math.random() * 3 + 2 + 's'; // Random animation duration (2-5 seconds)
-    return particle;
-}
-
-// Function to create multiple confetti particles
-function createConfetti(numParticles) {
-    var confetti = [];
-    for (var i = 0; i < numParticles; i++) {
-        confetti.push(createConfettiParticle());
-    }
-    return confetti;
-}
-
-// Function to create a flower element
-function createFlower() {
-    var flower = document.createElement('div');
-    flower.classList.add('flower');
-    flower.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-    flower.style.animationDuration = Math.random() * 5 + 5 + 's'; // Random animation duration (5-10 seconds)
-    return flower;
-}
-
-// Function to create multiple flowers
-function createFlowers(numFlowers) {
-    var flowers = [];
-    for (var i = 0; i < numFlowers; i++) {
-        flowers.push(createFlower());
-    }
-    return flowers;
-}
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get the current date

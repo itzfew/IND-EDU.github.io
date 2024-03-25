@@ -1,3 +1,12 @@
+#latest-date {
+    padding: 10px;
+    background-color: #007bff; /* Background color (adjust as needed) */
+    color: #fff; /* Text color */
+    border: 2px solid #0056b3; /* Border color */
+    border-radius: 10px; /* Border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for 3D effect */
+}
+
 /* Your CSS styles for navigation, footer, and books catalogue */
 .logo {
     text-align: center; /* Center the text */

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timer with Records</title>
+<style>
+  /* Styles for the timer container */
+  .timer-container {
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  /* Styles for the timer display */
+  .timer {
+    font-size: 24px;
+    border: 2px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Styles for the buttons */
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="timer-container">
+  <div class="timer" id="timerDisplay">00:00:00.000</div>
+  <button onclick="startTimer()">Start</button>
+  <button onclick="pauseTimer()">Pause</button>
+  <button onclick="stopTimer()">Stop</button>
+  <button onclick="createRecord()">Create Record</button>
+</div>
+
+<script>
+  let timerInterval;
+  let startTime;
+  let elapsedTime = 0;
+  let isTimerRunning = false;
+  let recordCount = 0;
+
+  // Function to start the timer
+  function startTimer() {
+    if (!isTimerRunning) {
+      startTime = Date.now() - elapsedTime;
+      timerInterval = setInterval(updateTimer, 10);
+      isTimerRunning = true;
+    }
+  }
+
+  // Function to pause the timer
+  function pauseTimer() {
+    clearInterval(timerInterval);
+    isTimerRunning = false;
+  }
+
+  // Function to stop the timer
+  function stopTimer() {
+    clearInterval(timerInterval);
+    isTimerRunning = false;
+    elapsedTime = 0;
+    updateTimer();
+  }
+
+  // Function to update the timer display
+  function updateTimer() {
+    const currentTime = Date.now();
+    elapsedTime = currentTime - startTime;
+    displayTime(elapsedTime);
+  }
+
+  // Function to display the timer in hours, minutes, seconds, and milliseconds
+  function displayTime(duration) {
+    const hours = Math.floor(duration / (1000 * 60 * 60));
+    const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((duration % (1000 * 60)) / 1000);
+    const milliseconds = Math.floor((duration % 1000));
+
+    const formattedTime = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}.${padZero(milliseconds, 3)}`;
+    document.getElementById('timerDisplay').textContent = formattedTime;
+  }
+
+  // Function to pad zeros to the timer values
+  function padZero(num, size = 2) {
+    let str = String(num);
+    while (str.length < size) {
+      str = '0' + str;
+    }
+    return str;
+  }
+
+  // Function to create a record
+  function createRecord() {
+    if (isTimerRunning) {
+      const recordTime = elapsedTime;
+      const recordHours = Math.floor(recordTime / (1000 * 60 * 60));
+      const recordMinutes = Math.floor((recordTime % (1000 * 60 * 60)) / (1000 * 60));
+      const recordSeconds = Math.floor((recordTime % (1000 * 60)) / 1000);
+      const recordMilliseconds = Math.floor((recordTime % 1000));
+
+      const record = `Record ${++recordCount}: ${padZero(recordHours)}:${padZero(recordMinutes)}:${padZero(recordSeconds)}.${padZero(recordMilliseconds, 3)}`;
+      console.log(record);
+    }
+  }
+</script>
+
+</body>
+</html>

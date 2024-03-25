@@ -233,4 +233,30 @@ footer {
     padding: 10px 0;
     }
 
-  
+  .post {
+    border: 2px solid #3366ff; /* Add border */
+    padding: 20px;
+    display: inline-block;
+}
+
+.timer-text {
+    font-weight: bold;
+    font-size: 24px;
+    color: #3366ff;
+    margin: 0;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3366ff;
+    color: white;
+    text-decoration: none;
+    border: 2px solid #3366ff; /* Add border */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.start-button:hover {
+    background-color: #003366; /* Change color on hover */
+}

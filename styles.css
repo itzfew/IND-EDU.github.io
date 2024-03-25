@@ -246,7 +246,9 @@ footer {
 
 .chat-popup {
   /* Your existing styles */
-  
+  animation: fadeIn 0.3s ease forwards; /* Apply animation to fade in the chat popup */
+}
+
 /* Styles for the chatbot circle icon */
 .chat-circle {
   position: fixed;
@@ -303,6 +305,4 @@ button {
   color: white;
   border-radius: 5px;
   cursor: pointer;
-}
-animation: fadeIn 0.3s ease forwards; /* Apply animation to fade in the chat popup */
 }

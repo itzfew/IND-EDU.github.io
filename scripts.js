@@ -46,3 +46,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.getElementById('share-btn').addEventListener('click', function() {
+    // Share text along with the link to your website
+    var shareText = "Check out this amazing website!";
+    var shareUrl = window.location.href;
+
+    // Check if the Web Share API is supported
+    if (navigator.share) {
+        // Share using the Web Share API
+        navigator.share({
+            title: document.title,
+            text: shareText,
+            url: shareUrl
+        })
+        .then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing:', error));
+    } else {
+        // Fallback for browsers that do not support the Web Share API
+        alert("Your browser does not support the Web Share API. Please use the built-in share options of your browser.");
+    }
+});
+

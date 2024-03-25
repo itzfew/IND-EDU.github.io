@@ -88,6 +88,14 @@ document.addEventListener('DOMContentLoaded', function() {
     latestDateElement.textContent = "Latest Date: " + formattedDate;
 });
 
+
+// Function to toggle chatbot popup
+function toggleChat() {
+  var chatPopup = document.getElementById("chatPopup");
+  chatPopup.style.display === "none" ? chatPopup.style.display = "block" : chatPopup.style.display = "none";
+}
+
+
 // Function to send message and receive a reply
 function sendMessage() {
   var userInput = document.getElementById("userInput").value;

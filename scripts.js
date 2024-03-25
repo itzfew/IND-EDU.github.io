@@ -158,3 +158,15 @@ function getFaqReply(faq) {
 
 // Example usage:
 sendMessage("Bot: Welcome to the chat! How can I assist you today?", false); // Bot initiates the conversation
+// Function to handle click on bot message
+function handleBotClick() {
+  var profilePanel = document.getElementById("profilePanel");
+  var botProfileName = "BOT EDUCATIONAL";
+  
+  // Display the profile panel and set the profile name
+  profilePanel.style.display = "block";
+  profilePanel.textContent = botProfileName;
+}
+
+// Example usage:
+sendMessage("Bot: Welcome to the chat! How can I assist you today?", false); // Bot initiates the conversation

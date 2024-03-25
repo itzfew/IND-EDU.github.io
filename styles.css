@@ -18,13 +18,8 @@
     text-align: center;
     border-bottom: 2px solid #ff00ff; /* Add colored border */
         font-weight: bold;
-
-        .latest-video h2 {
-    text-align: center;
-    border-bottom: 2px solid #ff00ff; /* Add colored border */
-        font-weight: bold;
+    }
         
-}
 .book-post {
     border: 1px solid #ccc;
     padding: 20px;

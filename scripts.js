@@ -1,25 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the current date
-    var currentDate = new Date();
-
-    // Check if it's a specific date (15th August, 26th January, or 25th March)
-    if ((currentDate.getMonth() === 7 && currentDate.getDate() === 15)) {
-        // Show celebration animation for 15th August (Independence Day)
-        startCelebrationAnimation("Independence Day", "balloon");
-    } else if ((currentDate.getMonth() === 0 && currentDate.getDate() === 26)) {
-        // Show celebration animation for 26th January (Republic Day)
-        startCelebrationAnimation("Republic Day", "flower");
-    } else if ((currentDate.getMonth() === 2 && currentDate.getDate() === 25)) {
-        // Show celebration animation for 25th March (Another Celebration)
-        startCelebrationAnimation("Another Celebration", "firework");
-    }
-});
-
 // Function to start the celebration animation
-function startCelebrationAnimation(celebrationName, type) {
+function startCelebrationAnimation(celebrationName) {
     // Create celebration animation elements
     var celebrationAnimation = document.getElementById('celebration-animation');
-    var items = createItems(50, type); // Create 50 items of the specified type
+    var items = createItems(50); // Create 50 items of random types
 
     // Append items to celebration animation
     items.forEach(function(item) {
@@ -35,39 +18,32 @@ function startCelebrationAnimation(celebrationName, type) {
     }, 10000); // 10 seconds
 }
 
-// Function to create a celebration item element
-function createItem(type) {
-    var item = document.createElement('div');
-    item.classList.add(type);
-    item.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-    item.style.animationDuration = Math.random() * 5 + 5 + 's'; // Random animation duration (5-10 seconds)
-    return item;
+// Function to create a random celebration item element
+function createRandomItem() {
+    var randomType = Math.floor(Math.random() * 3); // Generate random number between 0 and 2
+    var type;
+    switch(randomType) {
+        case 0:
+            type = "balloon";
+            break;
+        case 1:
+            type = "flower";
+            break;
+        case 2:
+            type = "firework";
+            break;
+    }
+    return createItem(type);
 }
 
 // Function to create multiple celebration items
-function createItems(numItems, type) {
+function createItems(numItems) {
     var items = [];
     for (var i = 0; i < numItems; i++) {
-        items.push(createItem(type));
+        items.push(createRandomItem());
     }
     return items;
 }
-
-// Function to show the celebration message
-function showCelebrationMessage(celebrationName) {
-    // Display the celebration message at the top of the page
-    var celebrationMessage = document.createElement('div');
-    celebrationMessage.textContent = "Today is " + celebrationName + "!";
-    celebrationMessage.classList.add('celebration-message');
-    document.body.appendChild(celebrationMessage);
-
-    // Remove the celebration message after 10 seconds
-    setTimeout(function() {
-        celebrationMessage.remove();
-    }, 10000); // 10 seconds
-}
-
-            
 
 
 document.addEventListener('DOMContentLoaded', function() {

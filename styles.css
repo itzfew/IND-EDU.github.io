@@ -48,3 +48,35 @@
 .menu-items li a:hover {
     text-decoration: underline;
 }
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.footer-section p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-section p a:hover {
+    text-decoration: underline;
+}

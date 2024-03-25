@@ -67,3 +67,19 @@ document.getElementById('share-btn').addEventListener('click', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the current date
+    var currentDate = new Date();
+
+    // Format the date as desired (e.g., "March 25, 2024")
+    var formattedDate = currentDate.toLocaleDateString('en-US', { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    });
+
+    // Display the formatted date at the top of the website
+    var latestDateElement = document.getElementById('latest-date');
+    latestDateElement.textContent = "Latest Date: " + formattedDate;
+});

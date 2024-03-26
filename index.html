@@ -23,33 +23,10 @@
 
 
 
-    <style>
-    /* Styles for the install banner */
-    .install-banner {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #0066ff;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      z-index: 1000;
-    }
-
-    .install-button {
-      background-color: #fff;
-      color: #0066ff;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+    
 </head>
 <body>
-  <!-- Your website content here -->
+
 
     
      <!-- Latest Date -->
@@ -134,55 +111,6 @@
 
     <script src="scripts.js"></script>
   
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registered:', registration);
-          })
-          .catch(error => {
-            console.log('Service Worker registration failed:', error);
-          });
-      });
-    }
-  </script>
-
-
- <!-- Install banner -->
-  <div class="install-banner" id="installBanner">
-    <span>Install this app for a better experience!</span>
-    <button class="install-button" id="installButton" onclick="installPWA()">Install</button>
-  </div>
-
-  <script>
-    let deferredPrompt;
-
-    window.addEventListener('beforeinstallprompt', (event) => {
-      // Prevent the default browser prompt
-      event.preventDefault();
-      // Stash the event so it can be triggered later
-      deferredPrompt = event;
-      // Show the custom install banner
-      document.getElementById('installBanner').style.display = 'block';
-    });
-
-    function installPWA() {
-      // Show the browser install prompt
-      deferredPrompt.prompt();
-      // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the install prompt');
-        } else {
-          console.log('User dismissed the install prompt');
-        }
-        // Clear the deferredPrompt variable
-        deferredPrompt = null;
-        // Hide the install banner
-        document.getElementById('installBanner').style.display = 'none';
-      });
-    }
-  </script>
+  
 </body>
 </html>

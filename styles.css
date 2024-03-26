@@ -10,7 +10,7 @@
     border-bottom: 4px solid #ff00ff; /* Add colored border */
     padding-bottom: 10px; /* Add space below the border */
 }
-
+ 
 /* Styling for the books catalogue section */
 .books-catalogue {
     display: grid;

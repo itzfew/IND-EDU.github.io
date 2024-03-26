@@ -5,7 +5,7 @@
   height: auto;
   margin: 0 auto; /* Center the logo horizontally */
 }
-
+ 
 /* Example of applying the logo to an element */
 .header-logo {
   background-image: url('img/Logo.png');

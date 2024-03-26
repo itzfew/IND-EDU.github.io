@@ -3,6 +3,7 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="924570053201-2fck960jr3dvo9hcm7hcj4h7c61e79b5.apps.googleusercontent.com" content="924570053201-2fck960jr3dvo9hcm7hcj4h7c61e79b5.apps.googleusercontent.com">
     <title>IND EDUCATION</title>
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="styles.css">
@@ -17,12 +18,50 @@
 
       gtag('config', '429423002');
     </script>
-    
-</head>
+    </head>
 <body>
+ <!-- Add the Google Sign-In button -->
+      <div class="g-signin2" data-onsuccess="onSignIn" data-clientid="924570053201-2fck960jr3dvo9hcm7hcj4h7c61e79b5.apps.googleusercontent.com"></div>
 
+    <!-- Include the Google Sign-In JavaScript SDK -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
+    <!-- Handle the sign-in callback -->
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            var email = profile.getEmail();
+            var username = profile.getName();
+            // Send 'email' and 'username' to your backend for storage
+            console.log("Email: " + email);
+            console.log("Username: " + username);
+        }
+    </script>
 
+<script>
+        
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            var email = profile.getEmail();
+            var username = profile.getName();
+            
+            // Send 'email' and 'username' to your backend for storage
+            // Example AJAX request to send data to backend
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://yourbackend.com/storeUserData', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        console.log('User data stored successfully!');
+                    } else {
+                        console.error('Error storing user data:', xhr.statusText);
+                    }
+                }
+            };
+            xhr.send(JSON.stringify({ email: email, username: username }));
+        }
+    </script>
 
    
     

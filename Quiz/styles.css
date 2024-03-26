@@ -1,0 +1,28 @@
+.quiz-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.option {
+  cursor: pointer;
+}
+
+#explanation {
+  margin-top: 20px;
+  font-style: italic;
+  display: none;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+  .quiz-container {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .option {
+    font-size: 14px;
+  }
+}

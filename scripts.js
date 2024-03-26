@@ -87,41 +87,23 @@ document.getElementById('share-btn').addEventListener('click', function() {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the current date
-    var currentDate = new Date();
+// Function to open the popup
+function openPopup() {
+  document.getElementById('installPopup').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
+}
 
-    // Format the date as desired (e.g., "March 25, 2024")
-    var formattedDate = currentDate.toLocaleDateString('en-US', { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
-    });
+// Function to close the popup
+function closePopup() {
+  document.getElementById('installPopup').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+}
 
-    // Display the formatted date at the top of the website
-    var latestDateElement = document.getElementById('latest-date');
-    latestDateElement.textContent = "Latest Date: " + formattedDate;
-});
+// Function to simulate installation (you can replace this with actual installation logic)
+function installWebsite() {
+  alert('Installing website...');
+  closePopup();
+}
 
-
- // Function to open the popup
-  function openPopup() {
-    document.getElementById('installPopup').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-  }
-
-  // Function to close the popup
-  function closePopup() {
-    document.getElementById('installPopup').style.display = 'none';
-    document.getElementById('overlay').style.display = 'none';
-  }
-
-  // Function to simulate installation (you can replace this with actual installation logic)
-  function installWebsite() {
-    alert('Installing website...');
-    closePopup();
-  }
-
-  // Show the popup when the page loads
-  window.onload = openPopup;
+// Show the popup when the page loads
+window.onload = openPopup;

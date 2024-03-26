@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Mixer</title>
+    <style>
+        /* CSS styles for the layout */
+        /* Adjust as needed */
+        /* For simplicity, using inline styles here */
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #inputs {
+            flex: 1;
+        }
+        #preview {
+            flex: 1;
+            border: 1px solid #ccc;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <textarea id="html" rows="10" cols="50">Enter HTML here...</textarea>
+        <textarea id="css" rows="5" cols="50">Enter CSS here...</textarea>
+        <textarea id="js" rows="5" cols="50">Enter JavaScript here...</textarea>
+        <div id="preview"></div>
+    </div>
+
+    <script>
+        // JavaScript to update the preview area
+        const htmlInput = document.getElementById('html');
+        const cssInput = document.getElementById('css');
+        const jsInput = document.getElementById('js');
+        const preview = document.getElementById('preview');
+
+        function updatePreview() {
+            preview.innerHTML = `
+                <style>${cssInput.value}</style>
+                ${htmlInput.value}
+                <script>${jsInput.value}</script>
+            `;
+        }
+
+        // Update preview on input change
+        htmlInput.addEventListener('input', updatePreview);
+        cssInput.addEventListener('input', updatePreview);
+        jsInput.addEventListener('input', updatePreview);
+
+        // Initial update
+        updatePreview();
+    </script>
+</body>
+</html>

@@ -8,17 +8,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Simulated data for demonstration
     const books = [
         {
-            title: 'NCERT PUNCH',
-            image: 'img/webshop/NCERT PUNCH Pw.png',
-            description: 'Free Physics Wallah NCERT Punch',
-            downloadLink: 'https://adrinolinks.com/NCERT_PUNCH_2024/'
+            title: 'Rankers Test Series',
+            image: 'img/webshop/Rankers Test Series.png',
+            description: 'Rankers Test Series For NEET .',
+            downloadLink: 'https://adrinolinks.com/Rankers-test-series'
         },
+
+        {
+            title: '45 Crash Course',
+            image: 'img/webshop/NEET 45 Days Crash Course Pw.png',
+            description: '45 CRASH course For Neet.',
+            downloadLink: 'https://adrinolinks.com/45_days_crash_cource'
+        },
+        
         {
             title: '36 Years PYQ NEET',
             image: 'img/webshop/NEET 36 years Pyq.png',
             description: '36 Years PYQS For Neet.',
             downloadLink: 'https://adrinolinks.com/33_YEARS_PAPERS_NEET'
         },
+{
+            title: 'NCERT PUNCH',
+            image: 'img/webshop/NCERT PUNCH Pw.png',
+            description: 'Free Physics Wallah NCERT Punch',
+            downloadLink: 'https://adrinolinks.com/NCERT_PUNCH_2024/'
+        },
+
+    
         // Add more book objects as needed
     ];
     

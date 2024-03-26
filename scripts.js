@@ -1,40 +1,32 @@
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const booksCatalogue = document.querySelector('.books-catalogue');
 
-    
     // Simulated data for demonstration
     const books = [
         {
             title: 'Rankers Test Series',
             image: 'img/webshop/Rankers Test Series.png',
-            description: 'Rankers Test Series For NEET .',
+            description: 'Rankers Test Series For NEET.',
             downloadLink: 'https://adrinolinks.com/Rankers-test-series'
         },
-
         {
             title: '45 Crash Course',
             image: 'img/webshop/NEET 45 Days Crash Course Pw.png',
             description: '45 CRASH course For Neet.',
             downloadLink: 'https://adrinolinks.com/45_days_crash_cource'
         },
-        
         {
             title: '36 Years PYQ NEET',
             image: 'img/webshop/NEET 36 years Pyq.png',
             description: '36 Years PYQS For Neet.',
             downloadLink: 'https://adrinolinks.com/33_YEARS_PAPERS_NEET'
         },
-{
+        {
             title: 'NCERT PUNCH',
             image: 'img/webshop/NCERT PUNCH Pw.png',
-            description: 'Free Physics Wallah NCERT Punch',
+            description: 'Free Physics Wallah NCERT Punch.',
             downloadLink: 'https://adrinolinks.com/NCERT_PUNCH_2024/'
-        },
-
-    
+        }
         // Add more book objects as needed
     ];
     
@@ -65,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 document.getElementById('share-btn').addEventListener('click', function() {
     // Share text along with the link to your website
     var shareText = "Check out this amazing website!";
@@ -86,6 +77,7 @@ document.getElementById('share-btn').addEventListener('click', function() {
         alert("Your browser does not support the Web Share API. Please use the built-in share options of your browser.");
     }
 });
+
 // Get the current date
 const currentDate = new Date();
 

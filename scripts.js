@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Function to open the popup
+ // Function to open the popup
   function openPopup() {
     document.getElementById('installPopup').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
@@ -123,5 +123,5 @@ document.addEventListener('DOMContentLoaded', function() {
     closePopup();
   }
 
-  // Show the popup after a delay (e.g., 10 seconds)
-  setTimeout(openPopup, 10000);
+  // Show the popup when the page loads
+  window.onload = openPopup;

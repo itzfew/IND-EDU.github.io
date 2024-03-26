@@ -1,3 +1,15 @@
+#latest-date {
+    padding: 10px;
+    background-color: #007bff; /* Background color (adjust as needed) */
+    color: #fff; /* Text color */
+    border: 2px solid #0056b3; /* Border color */
+    border-radius: 10px; /* Border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for 3D effect */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+}
+
+
 /* Logo styling */
 .logo {
     display: block;

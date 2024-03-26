@@ -7,7 +7,8 @@
     <title>IND EDUCATION</title> 
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="styles.css">
-     
+     <link rel="manifest" href="/manifest.json"> <!-- Link to your manifest.json file -->
+    
     <!-- Other head elements -->
     <!-- Google Analytics tracking code -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=429423002"></script>
@@ -19,20 +20,29 @@
       gtag('config', '429423002');
     </script>
     </head>
+
+
+
+    <style>
+    .install-button {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #0066ff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+  </style>
+
 <body>
-
-<div class="popup" id="installPopup">
-  <h2>Install Our Website</h2>
-  <p>Would you like to install our website for easier access?</p>
-  <button onclick="installWebsite()">Install</button>
-  <button onclick="closePopup()">Close</button>
-</div>
-
-<div class="overlay" id="overlay"></div>
-
-
-
-
+  <!-- Your website content here -->
 
     
      <!-- Latest Date -->
@@ -131,5 +141,38 @@
     }
   </script>
 
+
+  <!-- Install button -->
+  <button class="install-button" id="installButton" onclick="installPWA()">Install App</button>
+
+  <script>
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (event) => {
+      // Prevent the default browser prompt
+      event.preventDefault();
+      // Stash the event so it can be triggered later
+      deferredPrompt = event;
+      // Show the custom install button
+      document.getElementById('installButton').style.display = 'block';
+    });
+
+    function installPWA() {
+      // Show the browser install prompt
+      deferredPrompt.prompt();
+      // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        // Clear the deferredPrompt variable
+        deferredPrompt = null;
+        // Hide the install button
+        document.getElementById('installButton').style.display = 'none';
+      });
+    }
+  </script>
 </body>
 </html>

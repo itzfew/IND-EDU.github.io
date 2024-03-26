@@ -87,3 +87,10 @@ const formattedDate = currentDate.toLocaleDateString('en-US', options);
 
 // Update the content of the latest-date div
 document.getElementById('latest-date').textContent = 'Latest Date: ' + formattedDate;
+console.log('Before updating date');
+// Update date code here
+console.log('After updating date');
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Update date code here
+});

@@ -105,3 +105,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// Function to open the popup
+  function openPopup() {
+    document.getElementById('installPopup').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
+
+  // Function to close the popup
+  function closePopup() {
+    document.getElementById('installPopup').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+
+  // Function to simulate installation (you can replace this with actual installation logic)
+  function installWebsite() {
+    alert('Installing website...');
+    closePopup();
+  }
+
+  // Show the popup after a delay (e.g., 10 seconds)
+  setTimeout(openPopup, 10000);

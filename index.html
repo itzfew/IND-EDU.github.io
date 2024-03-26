@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     <title>IND EDUCATION</title> 
-    <link rel="manifest" href="/manifest.json">
+ 
     <link rel="stylesheet" href="styles.css">
-     <link rel="manifest" href="/manifest.json"> <!-- Link to your manifest.json file -->
+     <link rel="manifest" href="manifest.json"> <!-- Link to your manifest.json file -->
     
     <!-- Other head elements -->
     <!-- Google Analytics tracking code -->
@@ -19,28 +19,35 @@
 
       gtag('config', '429423002');
     </script>
-    </head>
+    
 
 
 
     <style>
-    .install-button {
+    /* Styles for the install banner */
+    .install-banner {
       display: none;
       position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 0;
+      left: 0;
+      width: 100%;
       background-color: #0066ff;
       color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
+      padding: 10px;
+      text-align: center;
       z-index: 1000;
     }
-  </style>
 
+    .install-button {
+      background-color: #fff;
+      color: #0066ff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
 <body>
   <!-- Your website content here -->
 
@@ -142,8 +149,11 @@
   </script>
 
 
-  <!-- Install button -->
-  <button class="install-button" id="installButton" onclick="installPWA()">Install App</button>
+ <!-- Install banner -->
+  <div class="install-banner" id="installBanner">
+    <span>Install this app for a better experience!</span>
+    <button class="install-button" id="installButton" onclick="installPWA()">Install</button>
+  </div>
 
   <script>
     let deferredPrompt;
@@ -153,8 +163,8 @@
       event.preventDefault();
       // Stash the event so it can be triggered later
       deferredPrompt = event;
-      // Show the custom install button
-      document.getElementById('installButton').style.display = 'block';
+      // Show the custom install banner
+      document.getElementById('installBanner').style.display = 'block';
     });
 
     function installPWA() {
@@ -169,8 +179,8 @@
         }
         // Clear the deferredPrompt variable
         deferredPrompt = null;
-        // Hide the install button
-        document.getElementById('installButton').style.display = 'none';
+        // Hide the install banner
+        document.getElementById('installBanner').style.display = 'none';
       });
     }
   </script>

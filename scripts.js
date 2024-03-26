@@ -86,4 +86,12 @@ document.getElementById('share-btn').addEventListener('click', function() {
         alert("Your browser does not support the Web Share API. Please use the built-in share options of your browser.");
     }
 });
+// Get the current date
+const currentDate = new Date();
 
+// Format the date as desired (e.g., "Month Day, Year")
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+const formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+// Update the content of the latest-date div
+document.getElementById('latest-date').textContent = 'Latest Date: ' + formattedDate;

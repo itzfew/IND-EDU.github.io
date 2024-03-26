@@ -1,8 +1,3 @@
-const question = document.getElementById('question');
-const options = document.querySelectorAll('.option');
-const explanation = document.getElementById('explanation');
-
-// Sample questions and answers
 const questions = [
   {
     question: "What is the capital of France?",
@@ -10,69 +5,82 @@ const questions = [
     answer: "Paris",
     explanation: "Paris is the capital city of France."
   },
+  {
+    question: "What is the largest ocean on Earth?",
+    options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+    answer: "Pacific Ocean",
+    explanation: "The Pacific Ocean is the largest ocean on Earth."
+  },
   // Add more questions here
 ];
 
 let currentQuestion = 0;
+let totalMarks = 0;
 
-// Load question
-function loadQuestion() {
-  question.textContent = questions[currentQuestion].question;
-  options.forEach((option, index) => {
-    option.textContent = questions[currentQuestion].options[index];
-    option.addEventListener('click', checkAnswer);
+const questionElements = document.getElementsByClassName('question');
+const optionsLists = document.getElementsByClassName('options');
+const explanationElements = document.getElementsByClassName('explanation');
+
+function loadQuestion(index) {
+  questionElements[index].textContent = questions[index].question;
+  optionsLists[index].innerHTML = "";
+  questions[index].options.forEach((option, optionIndex) => {
+    const li = document.createElement('li');
+    li.textContent = option;
+    li.classList.add('option');
+    li.addEventListener('click', () => checkAnswer(option, index));
+    optionsLists[index].appendChild(li);
   });
 }
 
-// Check selected answer
-function checkAnswer(event) {
-  const selectedOption = event.target;
-  const correctAnswer = questions[currentQuestion].answer;
-  const explanationText = questions[currentQuestion].explanation;
+function checkAnswer(selectedOption, index) {
+  const correctAnswer = questions[index].answer;
+  const explanationText = questions[index].explanation;
+  const options = optionsLists[index].getElementsByTagName('li');
 
-  if (selectedOption.textContent === correctAnswer) {
-    selectedOption.style.backgroundColor = 'green';
-    explanation.style.display = 'block';
-    explanation.textContent = "Correct! " + explanationText;
+  options.forEach(option => {
+    option.classList.remove('wrong', 'correct');
+    if (option.textContent === correctAnswer) {
+      option.classList.add('correct');
+    } else if (option.textContent === selectedOption) {
+      option.classList.add('wrong');
+    }
+    option.removeEventListener('click', () => checkAnswer(selectedOption, index));
+  });
+
+  explanationElements[index].style.display = 'block';
+  if (selectedOption === correctAnswer) {
+    explanationElements[index].textContent = "Correct! " + explanationText;
+    totalMarks += 4;
   } else {
-    selectedOption.style.backgroundColor = 'red';
-    options.forEach(option => {
-      if (option.textContent === correctAnswer) {
-        option.style.backgroundColor = 'green';
-      }
-    });
-    explanation.style.display = 'block';
-    explanation.textContent = "Incorrect. The correct answer is: " + correctAnswer + ". " + explanationText;
+    explanationElements[index].textContent = "Incorrect. The correct answer is: " + correctAnswer + ". " + explanationText;
+    totalMarks -= 1;
   }
 
   // Disable further clicks after answer is selected
   options.forEach(option => {
-    option.removeEventListener('click', checkAnswer);
+    option.removeEventListener('click', () => checkAnswer(selectedOption, index));
   });
 
   // Move to next question after a delay
-  setTimeout(nextQuestion, 2000);
+  setTimeout(() => {
+    nextQuestion(index);
+  }, 2000);
 }
 
-// Load next question
-function nextQuestion() {
-  // Reset styles
-  options.forEach(option => {
-    option.style.backgroundColor = '';
-  });
-  explanation.style.display = 'none';
-  
-  // Move to next question or show result if all questions are done
-  currentQuestion++;
-  if (currentQuestion < questions.length) {
-    loadQuestion();
+function nextQuestion(index) {
+  if (index < questions.length - 1) {
+    loadQuestion(index + 1);
   } else {
-    question.textContent = "Quiz complete!";
-    options.forEach(option => {
-      option.style.display = 'none';
-    });
+    showResult();
   }
 }
 
-// Initial load
-loadQuestion();
+function showResult() {
+  const resultContainer = document.createElement('div');
+  resultContainer.textContent = "Total Marks: " + totalMarks;
+  document.body.appendChild(resultContainer);
+}
+
+// Load initial question
+loadQuestion(0);

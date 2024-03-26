@@ -13,7 +13,7 @@ const questions = [
   },
   // Add more questions here
 ];
-
+ 
 let currentQuestion = 0;
 let totalMarks = 0;
 

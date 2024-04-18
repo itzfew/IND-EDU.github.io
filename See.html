@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -103,6 +103,7 @@
     margin-right: 10px;
     font-size: 24px;
     color: #333;
+    cursor: pointer;
   }
   /* Add style for copy icon */
   #copyIcon {
@@ -132,9 +133,8 @@
   <div id="socialMediaIcons">
     <a href="#" id="twitterIcon"><i class="fab fa-twitter"></i></a>
     <a href="#" id="facebookIcon"><i class="fab fa-facebook"></i></a>
-    <a href="#" id="instagramIcon"><i class="fab fa-instagram"></i></a>
     <a href="#" id="whatsappIcon"><i class="fab fa-whatsapp"></i></a>
-    <a href="#" id="linkedinIcon"><i class="fab fa-linkedin"></i></a>
+    <a href="#" id="telegramIcon"><i class="fab fa-telegram"></i></a>
     <!-- Icon for copying text -->
     <i id="copyIcon" class="far fa-copy"></i>
   </div>
@@ -199,38 +199,49 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('lastClickedTimestamp', todayDate);
     localStorage.setItem('streak', streak);
     document.getElementById('clickButton').disabled = true;
-    document.getElementById('message').innerText = "You have completed today's goal!";// Generate share message for Twitter
-    let twitterMessage = "I've completed my goal for today on Streak Tracker! My current streak is " + streak + ". #StreakTracker #GoalAchieved";
+    document.getElementById('message').innerText = "You have completed today's goal!";
+  });
 
-    // Generate share message for Facebook
-    let facebookMessage = "I've completed my goal for today on Streak Tracker! My current streak is " + streak + ".";
+  // Generate share message for Twitter
+  let twitterMessage = "I've completed my goal for today on Free study App! My current streak is " + streak + ". #StreakTracker #GoalAchieved";
 
-    // Update social media share links
-    document.getElementById('twitterIcon').href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(twitterMessage);
-    document.getElementById('facebookIcon').href = "https://www.facebook.com/sharer/sharer.php?u=https://example.com&quote=" + encodeURIComponent(facebookMessage);
+  // Generate share message for Facebook
+  let facebookMessage = "I've completed my goal for today on Free study App! My current streak is " + streak + ".";
 
-    // Display message
-    document.getElementById('message').innerText = "You have completed today's goal! Share your achievement with friends.";
+  // Generate share message for WhatsApp
+  let whatsappMessage = "I've completed my goal for today on Free study App! My current streak is " + streak + ". #StreakTracker #GoalAchieved";
 
-    // Automatically open share links in a new tab
-    let socialMediaIcons = document.querySelectorAll('#socialMediaIcons a');
-    socialMediaIcons.forEach(icon => {
-      icon.addEventListener('click', function(event) {
-        event.preventDefault();
-        let url = this.href;
-        window.open(url, '_blank');
-      });
-    });
+  // Generate share message for Telegram
+  let telegramMessage = "I've completed my goal for today on Free study App! My current streak is " + streak + ". #StreakTracker #GoalAchieved";
 
-    // Copy message to clipboard when copy icon is clicked
-    let copyIcon = document.getElementById('copyIcon');
-    copyIcon.addEventListener('click', function() {
-      let messageToCopy = "I've completed my goal for today on Streak Tracker! My current streak is " + streak + ".";
-      navigator.clipboard.writeText(messageToCopy).then(function() {
-        alert("Message copied to clipboard!");
-      }, function() {
-        alert("Failed to copy message to clipboard.");
-      });
+  // Update social media share links
+  document.getElementById('twitterIcon').addEventListener('click', function() {
+    let twitterShareUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(twitterMessage);
+    window.open(twitterShareUrl, '_blank');
+  });
+
+  document.getElementById('facebookIcon').addEventListener('click', function() {
+    let facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=https://example.com&quote=" + encodeURIComponent(facebookMessage);
+    window.open(facebookShareUrl, '_blank');
+  });
+
+  document.getElementById('whatsappIcon').addEventListener('click', function() {
+    let whatsappShareUrl = "https://wa.me/?text=" + encodeURIComponent(whatsappMessage);
+    window.open(whatsappShareUrl, '_blank');
+  });
+
+  document.getElementById('telegramIcon').addEventListener('click', function() {
+    let telegramShareUrl = "https://telegram.me/share/url?url=&text=" + encodeURIComponent(telegramMessage);
+    window.open(telegramShareUrl, '_blank');
+  });
+
+  // Copy message to clipboard when copy icon is clicked
+  document.getElementById('copyIcon').addEventListener('click', function() {
+    let messageToCopy = "I've completed my goal for today on Free study App! My current streak is " + streak + ".";
+    navigator.clipboard.writeText(messageToCopy).then(function() {
+      alert("Message copied to clipboard!");
+    }, function() {
+      alert("Failed to copy message to clipboard.");
     });
   });
 });

@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,13 +28,13 @@
     </style>
     <script>
         window.onload = function() {
-            // Check if the user has visited adrinolinks.in within the last 5 hours
+            // Check if the user has visited adrinolinks.com/websitetest within the last 5 hours
             const visitTime = localStorage.getItem('adrinolinksVisited');
             const currentTime = Date.now();
             const fiveHours = 5 * 60 * 60 * 1000;
 
             if (!visitTime || currentTime - visitTime >= fiveHours) {
-                // Redirect to adrinolinks.in if it hasn't been visited within the last 5 hours
+                // Redirect to adrinolinks.com/websitetest if it hasn't been visited within the last 5 hours
                 window.location.href = 'https://adrinolinks.com/websitetest';
             }
         };

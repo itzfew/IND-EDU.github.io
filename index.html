@@ -41,17 +41,24 @@
     <a class="start-link" id="startLink" href="#">Start</a>
 
     <script>
+        function setVisitTime() {
+            const visitTime = Date.now();
+            localStorage.setItem('adrinolinksVisited', visitTime);
+        }
+
         window.onload = function() {
-            // Check if the user has visited adrinolinks.in
-            if (localStorage.getItem('adrinolinksVisited') === 'true') {
-                // Redirect to the redirect page if adrinolinks.in has been visited
+            // Check if the user has visited adrinolinks.in within the last 5 hours (18000000 milliseconds)
+            const visitTime = localStorage.getItem('adrinolinksVisited');
+            const currentTime = Date.now();
+            const fiveHours = 5 * 60 * 60 * 1000;
+
+            if (visitTime && currentTime - visitTime < fiveHours) {
+                // Redirect to the redirect page if adrinolinks.in has been visited within the last 5 hours
                 window.location.href = 'redirect.html';
             } else {
                 // Set the link href to adrinolinks.in and add the click event
                 document.getElementById('startLink').setAttribute('href', 'https://adrinolinks.in');
-                document.getElementById('startLink').addEventListener('click', function() {
-                    localStorage.setItem('adrinolinksVisited', 'true');
-                });
+                document.getElementById('startLink').addEventListener('click', setVisitTime);
             }
         };
     </script>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waheed Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             display: flex;
@@ -27,8 +28,8 @@
         .header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
         .logo {
             width: 50px;
@@ -36,11 +37,47 @@
             margin-right: 20px;
         }
         .header h1 {
-            font-size: 48px;
+            font-size: 36px;
             color: #333;
         }
-        .content p {
+        .menu {
+            position: relative;
+        }
+        .menu-button {
             font-size: 24px;
+            color: #007bff;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 0;
+            background: white;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            padding: 10px;
+            z-index: 1;
+        }
+        .menu-content a {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            margin: 5px 0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .menu-content a:hover {
+            color: #fff;
+            background: #007bff;
+        }
+        .content p {
+            font-size: 18px;
             color: #666;
             margin-bottom: 30px;
         }
@@ -104,6 +141,15 @@
             }
         }
 
+        function toggleMenu() {
+            var menuContent = document.getElementById('menuContent');
+            if (menuContent.style.display === "none" || menuContent.style.display === "") {
+                menuContent.style.display = "block";
+            } else {
+                menuContent.style.display = "none";
+            }
+        }
+
         window.onload = function() {
             // Check if the user has visited adrinolinks.com/websitetest within the last 5 hours
             const visitTime = localStorage.getItem('adrinolinksVisited');
@@ -120,8 +166,21 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://via.placeholder.com/50" alt="Logo" class="logo">
-            <h1>Waheed.in</h1>
+            <div class="logo-header">
+                <img src="https://via.placeholder.com/50" alt="Logo" class="logo">
+                <h1>Waheed.in</h1>
+            </div>
+            <div class="menu">
+                <button class="menu-button" onclick="toggleMenu()">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="menu-content" id="menuContent">
+                    <a href="https://ind-edu.pages.dev/" target="_blank"><i class="fa fa-share"></i> Share</a>
+                    <p>Click the following link to see the study material helpful for NEET</p>
+                    <a href="https://t.me/NEETJEECHANNEL" target="_blank"><i class="fa fa-telegram"></i> Telegram</a>
+                    <a href="https://t.me/NeetAspirantsBot" target="_blank"><i class="fa fa-envelope"></i> Contact</a>
+                </div>
+            </div>
         </div>
         <div class="content">
             <p>This is the content of Waheed.in for Students</p>

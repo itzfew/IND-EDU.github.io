@@ -31,6 +31,10 @@
             justify-content: space-between;
             margin-bottom: 20px;
         }
+        .logo-header {
+            display: flex;
+            align-items: center;
+        }
         .logo {
             width: 50px;
             height: 50px;
@@ -63,7 +67,8 @@
             padding: 10px;
             z-index: 1;
         }
-        .menu-content a {
+        .menu-content a,
+        .menu-content button {
             display: block;
             color: #007bff;
             text-decoration: none;
@@ -71,8 +76,12 @@
             padding: 5px 10px;
             border-radius: 5px;
             transition: background 0.3s;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
-        .menu-content a:hover {
+        .menu-content a:hover,
+        .menu-content button:hover {
             color: #fff;
             background: #007bff;
         }
@@ -122,6 +131,16 @@
             color: #fff;
             background: #007bff;
         }
+        .share-text {
+            display: none;
+            margin: 10px 0;
+            padding: 10px;
+            background: #e0f7fa;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            color: #007bff;
+            font-size: 16px;
+        }
     </style>
     <script>
         function toggleDropdown(id) {
@@ -150,6 +169,11 @@
             }
         }
 
+        function showShareText() {
+            var shareText = document.getElementById('shareText');
+            shareText.style.display = 'block';
+        }
+
         window.onload = function() {
             // Check if the user has visited adrinolinks.com/websitetest within the last 5 hours
             const visitTime = localStorage.getItem('adrinolinksVisited');
@@ -175,8 +199,12 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <div class="menu-content" id="menuContent">
-                    <a href="https://ind-edu.pages.dev/" target="_blank"><i class="fa fa-share"></i> Share</a>
-                    <p>Click the following link to see the study material helpful for NEET</p>
+                    <button onclick="showShareText()"><i class="fa fa-share"></i> Share</button>
+                    <div id="shareText" class="share-text">
+                        Click the following link to see the study material helpful for NEET:
+                        <br>
+                        <a href="https://ind-edu.pages.dev/" target="_blank">ind-edu.pages.dev</a>
+                    </div>
                     <a href="https://t.me/NEETJEECHANNEL" target="_blank"><i class="fa fa-telegram"></i> Telegram</a>
                     <a href="https://t.me/NeetAspirantsBot" target="_blank"><i class="fa fa-envelope"></i> Contact</a>
                 </div>

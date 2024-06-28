@@ -38,13 +38,22 @@
     </style>
 </head>
 <body>
-    <a class="start-link" href="https://adrinolinks.in" target="_blank">Start</a>
+    <a class="start-link" id="startLink" href="#">Start</a>
 
     <script>
-        // Store the fact that the user has visited the adrinolinks.in link in localStorage
-        document.querySelector('.start-link').addEventListener('click', function() {
-            localStorage.setItem('adrinolinksVisited', 'true');
-        });
+        window.onload = function() {
+            // Check if the user has visited adrinolinks.in
+            if (localStorage.getItem('adrinolinksVisited') === 'true') {
+                // Redirect to the redirect page if adrinolinks.in has been visited
+                window.location.href = 'redirect.html';
+            } else {
+                // Set the link href to adrinolinks.in and add the click event
+                document.getElementById('startLink').setAttribute('href', 'https://adrinolinks.in');
+                document.getElementById('startLink').addEventListener('click', function() {
+                    localStorage.setItem('adrinolinksVisited', 'true');
+                });
+            }
+        };
     </script>
 </body>
 </html>

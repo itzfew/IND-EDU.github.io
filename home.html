@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,8 +25,43 @@
             font-size: 24px;
             color: #666;
         }
+        .dropdown {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .dropdown-item {
+            cursor: pointer;
+            font-size: 24px;
+            color: #007bff;
+            margin: 10px 0;
+        }
+        .dropdown-item:hover {
+            color: #0056b3;
+        }
+        .dropdown-content {
+            display: none;
+            margin-left: 20px;
+        }
+        .dropdown-content a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+        .dropdown-content a:hover {
+            color: #007bff;
+        }
     </style>
     <script>
+        function toggleDropdown(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
         window.onload = function() {
             // Check if the user has visited adrinolinks.com/websitetest within the last 5 hours
             const visitTime = localStorage.getItem('adrinolinksVisited');
@@ -43,7 +78,34 @@
 <body>
     <div class="content">
         <h1>Welcome to Waheed.in</h1>
-        <p>This is the content of Waheed.in</p>
+        <p>This is the content of Waheed.in for Students</p>
+
+        <div class="dropdown">
+            <div class="dropdown-item" onclick="toggleDropdown('mathDropdown')">Mathematics</div>
+            <div class="dropdown-content" id="mathDropdown">
+                <a href="https://www.example.com/algebra">Algebra</a>
+                <a href="https://www.example.com/geometry">Geometry</a>
+                <a href="https://www.example.com/calculus">Calculus</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="dropdown-item" onclick="toggleDropdown('scienceDropdown')">Science</div>
+            <div class="dropdown-content" id="scienceDropdown">
+                <a href="https://www.example.com/physics">Physics</a>
+                <a href="https://www.example.com/chemistry">Chemistry</a>
+                <a href="https://www.example.com/biology">Biology</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="dropdown-item" onclick="toggleDropdown('literatureDropdown')">Literature</div>
+            <div class="dropdown-content" id="literatureDropdown">
+                <a href="https://www.example.com/shakespeare">Shakespeare</a>
+                <a href="https://www.example.com/poetry">Poetry</a>
+                <a href="https://www.example.com/novels">Novels</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

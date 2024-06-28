@@ -10,46 +10,64 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #e0f7fa;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%);
         }
         .content {
             text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         .content h1 {
             font-size: 48px;
             color: #333;
+            margin-bottom: 20px;
         }
         .content p {
             font-size: 24px;
             color: #666;
+            margin-bottom: 30px;
         }
         .dropdown {
-            margin-top: 20px;
             text-align: left;
+            margin-bottom: 20px;
         }
         .dropdown-item {
             cursor: pointer;
             font-size: 24px;
             color: #007bff;
             margin: 10px 0;
+            background: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
         }
         .dropdown-item:hover {
             color: #0056b3;
+            background: #f0f0f0;
+            transform: translateY(-2px);
         }
         .dropdown-content {
             display: none;
             margin-left: 20px;
+            margin-top: 10px;
+            padding-left: 20px;
+            border-left: 2px solid #007bff;
         }
         .dropdown-content a {
             display: block;
-            color: #333;
+            color: #007bff;
             text-decoration: none;
             margin: 5px 0;
+            transition: color 0.3s;
         }
         .dropdown-content a:hover {
-            color: #007bff;
+            color: #0056b3;
         }
     </style>
     <script>
@@ -83,27 +101,36 @@
         <div class="dropdown">
             <div class="dropdown-item" onclick="toggleDropdown('mathDropdown')">Mathematics</div>
             <div class="dropdown-content" id="mathDropdown">
-                <a href="https://www.example.com/algebra">Algebra</a>
-                <a href="https://www.example.com/geometry">Geometry</a>
-                <a href="https://www.example.com/calculus">Calculus</a>
+                <a href="https://www.example.com/algebra" target="_blank">Algebra</a>
+                <a href="https://www.example.com/geometry" target="_blank">Geometry</a>
+                <a href="https://www.example.com/calculus" target="_blank">Calculus</a>
             </div>
         </div>
 
         <div class="dropdown">
             <div class="dropdown-item" onclick="toggleDropdown('scienceDropdown')">Science</div>
             <div class="dropdown-content" id="scienceDropdown">
-                <a href="https://www.example.com/physics">Physics</a>
-                <a href="https://www.example.com/chemistry">Chemistry</a>
-                <a href="https://www.example.com/biology">Biology</a>
+                <a href="https://www.example.com/physics" target="_blank">Physics</a>
+                <a href="https://www.example.com/chemistry" target="_blank">Chemistry</a>
+                <a href="https://www.example.com/biology" target="_blank">Biology</a>
             </div>
         </div>
 
         <div class="dropdown">
             <div class="dropdown-item" onclick="toggleDropdown('literatureDropdown')">Literature</div>
             <div class="dropdown-content" id="literatureDropdown">
-                <a href="https://www.example.com/shakespeare">Shakespeare</a>
-                <a href="https://www.example.com/poetry">Poetry</a>
-                <a href="https://www.example.com/novels">Novels</a>
+                <a href="https://www.example.com/shakespeare" target="_blank">Shakespeare</a>
+                <a href="https://www.example.com/poetry" target="_blank">Poetry</a>
+                <a href="https://www.example.com/novels" target="_blank">Novels</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="dropdown-item" onclick="toggleDropdown('historyDropdown')">History</div>
+            <div class="dropdown-content" id="historyDropdown">
+                <a href="https://www.example.com/ancient-history" target="_blank">Ancient History</a>
+                <a href="https://www.example.com/medieval-history" target="_blank">Medieval History</a>
+                <a href="https://www.example.com/modern-history" target="_blank">Modern History</a>
             </div>
         </div>
     </div>

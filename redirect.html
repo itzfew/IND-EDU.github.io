@@ -6,16 +6,16 @@
     <title>Redirect Page</title>
     <script>
         window.onload = function() {
-            // Check if the user has visited adrinolinks.in within the last 5 hours
+            // Check if the user has visited adrinolinks.com/websitetest within the last 5 hours
             const visitTime = localStorage.getItem('adrinolinksVisited');
             const currentTime = Date.now();
             const fiveHours = 5 * 60 * 60 * 1000;
 
             if (visitTime && currentTime - visitTime < fiveHours) {
-                // Redirect to https://ind-edu.pages.dev/home if adrinolinks.in has been visited within the last 5 hours
-                window.location.href = 'https://ind-edu.pages.dev/home';
+                // Redirect to Waheed.in if adrinolinks.com/websitetest has been visited within the last 5 hours
+                window.location.href = 'https://Waheed.in';
             } else {
-                // Redirect back to the start page if adrinolinks.in has not been visited within the last 5 hours
+                // Redirect back to the start page if adrinolinks.com/websitetest has not been visited within the last 5 hours
                 window.location.href = 'index.html';
             }
         };

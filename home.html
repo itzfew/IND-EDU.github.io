@@ -131,16 +131,6 @@
             color: #fff;
             background: #007bff;
         }
-        .share-text {
-            display: none;
-            margin: 10px 0;
-            padding: 10px;
-            background: #e0f7fa;
-            border: 1px solid #007bff;
-            border-radius: 5px;
-            color: #007bff;
-            font-size: 16px;
-        }
     </style>
     <script>
         function toggleDropdown(id) {
@@ -169,9 +159,10 @@
             }
         }
 
-        function showShareText() {
-            var shareText = document.getElementById('shareText');
-            shareText.style.display = 'block';
+        function shareToTelegram() {
+            const message = encodeURIComponent("Click the following link to see the study material helpful for NEET: https://ind-edu.pages.dev/");
+            const telegramUrl = `https://t.me/share/url?url=https://ind-edu.pages.dev/&text=${message}`;
+            window.open(telegramUrl, '_blank');
         }
 
         window.onload = function() {
@@ -199,12 +190,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <div class="menu-content" id="menuContent">
-                    <button onclick="showShareText()"><i class="fa fa-share"></i> Share</button>
-                    <div id="shareText" class="share-text">
-                        Click the following link to see the study material helpful for NEET:
-                        <br>
-                        <a href="https://ind-edu.pages.dev/" target="_blank">ind-edu.pages.dev</a>
-                    </div>
+                    <button onclick="shareToTelegram()"><i class="fa fa-share"></i> Share</button>
                     <a href="https://t.me/NEETJEECHANNEL" target="_blank"><i class="fa fa-telegram"></i> Telegram</a>
                     <a href="https://t.me/NeetAspirantsBot" target="_blank"><i class="fa fa-envelope"></i> Contact</a>
                 </div>

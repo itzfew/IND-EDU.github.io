@@ -15,17 +15,29 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%);
         }
-        .content {
+        .container {
             text-align: center;
             background: rgba(255, 255, 255, 0.9);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
         }
-        .content h1 {
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+        .header h1 {
             font-size: 48px;
             color: #333;
-            margin-bottom: 20px;
         }
         .content p {
             font-size: 24px;
@@ -44,6 +56,7 @@
             background: #fff;
             padding: 10px 20px;
             border-radius: 5px;
+            border: 2px solid #007bff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
         }
@@ -64,16 +77,19 @@
             color: #007bff;
             text-decoration: none;
             margin: 5px 0;
-            transition: color 0.3s;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
         .dropdown-content a:hover {
-            color: #0056b3;
+            color: #fff;
+            background: #007bff;
         }
     </style>
     <script>
         function toggleDropdown(id) {
             var content = document.getElementById(id);
-            if (content.style.display === "none") {
+            if (content.style.display === "none" || content.style.display === "") {
                 content.style.display = "block";
             } else {
                 content.style.display = "none";
@@ -94,43 +110,48 @@
     </script>
 </head>
 <body>
-    <div class="content">
-        <h1>Welcome to Waheed.in</h1>
-        <p>This is the content of Waheed.in for Students</p>
-
-        <div class="dropdown">
-            <div class="dropdown-item" onclick="toggleDropdown('mathDropdown')">Mathematics</div>
-            <div class="dropdown-content" id="mathDropdown">
-                <a href="https://www.example.com/algebra" target="_blank">Algebra</a>
-                <a href="https://www.example.com/geometry" target="_blank">Geometry</a>
-                <a href="https://www.example.com/calculus" target="_blank">Calculus</a>
-            </div>
+    <div class="container">
+        <div class="header">
+            <img src="https://via.placeholder.com/50" alt="Logo" class="logo">
+            <h1>Waheed.in</h1>
         </div>
+        <div class="content">
+            <p>This is the content of Waheed.in for Students</p>
 
-        <div class="dropdown">
-            <div class="dropdown-item" onclick="toggleDropdown('scienceDropdown')">Science</div>
-            <div class="dropdown-content" id="scienceDropdown">
-                <a href="https://www.example.com/physics" target="_blank">Physics</a>
-                <a href="https://www.example.com/chemistry" target="_blank">Chemistry</a>
-                <a href="https://www.example.com/biology" target="_blank">Biology</a>
+            <div class="dropdown">
+                <div class="dropdown-item" onclick="toggleDropdown('mathDropdown')">Mathematics</div>
+                <div class="dropdown-content" id="mathDropdown">
+                    <a href="https://www.example.com/algebra" target="_blank">Algebra</a>
+                    <a href="https://www.example.com/geometry" target="_blank">Geometry</a>
+                    <a href="https://www.example.com/calculus" target="_blank">Calculus</a>
+                </div>
             </div>
-        </div>
 
-        <div class="dropdown">
-            <div class="dropdown-item" onclick="toggleDropdown('literatureDropdown')">Literature</div>
-            <div class="dropdown-content" id="literatureDropdown">
-                <a href="https://www.example.com/shakespeare" target="_blank">Shakespeare</a>
-                <a href="https://www.example.com/poetry" target="_blank">Poetry</a>
-                <a href="https://www.example.com/novels" target="_blank">Novels</a>
+            <div class="dropdown">
+                <div class="dropdown-item" onclick="toggleDropdown('scienceDropdown')">Science</div>
+                <div class="dropdown-content" id="scienceDropdown">
+                    <a href="https://www.example.com/physics" target="_blank">Physics</a>
+                    <a href="https://www.example.com/chemistry" target="_blank">Chemistry</a>
+                    <a href="https://www.example.com/biology" target="_blank">Biology</a>
+                </div>
             </div>
-        </div>
 
-        <div class="dropdown">
-            <div class="dropdown-item" onclick="toggleDropdown('historyDropdown')">History</div>
-            <div class="dropdown-content" id="historyDropdown">
-                <a href="https://www.example.com/ancient-history" target="_blank">Ancient History</a>
-                <a href="https://www.example.com/medieval-history" target="_blank">Medieval History</a>
-                <a href="https://www.example.com/modern-history" target="_blank">Modern History</a>
+            <div class="dropdown">
+                <div class="dropdown-item" onclick="toggleDropdown('literatureDropdown')">Literature</div>
+                <div class="dropdown-content" id="literatureDropdown">
+                    <a href="https://www.example.com/shakespeare" target="_blank">Shakespeare</a>
+                    <a href="https://www.example.com/poetry" target="_blank">Poetry</a>
+                    <a href="https://www.example.com/novels" target="_blank">Novels</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropdown-item" onclick="toggleDropdown('historyDropdown')">History</div>
+                <div class="dropdown-content" id="historyDropdown">
+                    <a href="https://www.example.com/ancient-history" target="_blank">Ancient History</a>
+                    <a href="https://www.example.com/medieval-history" target="_blank">Medieval History</a>
+                    <a href="https://www.example.com/modern-history" target="_blank">Modern History</a>
+                </div>
             </div>
         </div>
     </div>

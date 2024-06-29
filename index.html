@@ -37,10 +37,9 @@
             color: #007bff;
             text-decoration: none;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            display: block;
+            width: 200px;
+            margin: 20px auto;
             padding: 10px 20px;
             border: 2px solid #007bff;
             border-radius: 5px;
@@ -62,7 +61,8 @@
         .start-guide {
             font-size: 14px;
             color: #555;
-            margin-top: 10px;
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -81,8 +81,8 @@
     </ul>
 </div>
 
-<a class="start-link" id="startLink" href="#">Start</a>
-<p class="start-guide">Click the button above to get started!</p>
+<p class="start-guide">Click the button below to get started!</p>
+<a class="start-link" id="startLink" href="https://adrinolinks.com/websitetest">Start</a>
 
 <script>
     function setVisitTime() {
